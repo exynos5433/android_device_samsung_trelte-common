@@ -20,8 +20,11 @@
 
 #define BTM_DEF_LOCAL_NAME   "Samsung Galaxy Note 4"
 
-#define BLE_VND_INCLUDED         TRUE
-#define BTIF_HF_WBS_PREFERRED    TRUE    /* Use WBS */
-#define BTM_WBS_INCLUDED         TRUE    /* Enable WBS */
+#define BTM_WBS_INCLUDED TRUE       /* Enable WBS */
+#define BTIF_HF_WBS_PREFERRED TRUE  /* Use WBS    */
+
+#define BLE_INCLUDED TRUE
+#define BTA_GATT_INCLUDED TRUE
+#define SMP_INCLUDED TRUE
 
 #endif
