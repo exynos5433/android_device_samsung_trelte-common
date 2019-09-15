@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
     ValidityService
 
 # Flat device tree for boot image
-PRODUCT_PACKAGES += \
+RODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
 ifeq ($(filter tre3gxx trelsktk trelte treltektt treltelgt trelteskt treltexx trhpltexx,$(TARGET_DEVICE)),)
