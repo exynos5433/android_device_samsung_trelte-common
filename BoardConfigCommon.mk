@@ -150,9 +150,7 @@ JAVA_SOURCE_OVERLAYS := \
 endif
 
 # HDMI
-BOARD_USES_NEW_HDMI := true
-BOARD_USES_GSC_VIDEO := true
-BOARD_USES_CEC := true
+BOARD_HDMI_INCAPABLE := true
 
 # Hidl
 DEVICE_MANIFEST_FILE := device/samsung/trelte-common/configs/manifest.xml
