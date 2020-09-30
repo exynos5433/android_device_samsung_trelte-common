@@ -156,7 +156,7 @@ BOARD_HDMI_INCAPABLE := true
 DEVICE_MANIFEST_FILE := device/samsung/trelte-common/configs/manifest.xml
 
 # HWCServices
-BOARD_USES_HWC_SERVICES := true
+#BOARD_USES_HWC_SERVICES := true
 SKIP_DISPLAY_BLANK_CTRL := true
 
 # Include path
