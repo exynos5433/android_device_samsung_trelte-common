@@ -225,7 +225,8 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libexynoscamera.so|libexynoscamera_shim.so \
-    /system/vendor/bin/gpsd|libshim_gpsd.so
+    /system/vendor/bin/gpsd|libshim_gpsd.so \
+     /system/bin/mediaserver|/vendor/lib/libstagefright_shim.so
 
 # Legacy BLOB Support
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \

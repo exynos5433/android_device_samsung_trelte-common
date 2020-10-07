@@ -1,6 +1,6 @@
 COMMON_PATH := device/samsung/trelte-common
 
-PRODUCT_CHARACTERISTICS := phone
+PRODUCT_CHARACTERISTICS := phonemedia
 
 # ADB INSECURE
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -76,9 +76,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstagefrighthw \
     libExynosOMX_Core
-
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
 
 # Configstore
 PRODUCT_PACKAGES += \
