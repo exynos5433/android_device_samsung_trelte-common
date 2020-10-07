@@ -301,7 +301,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+    android.hardware.vibrator@1.0-service \
+    sensors.exynos5
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
