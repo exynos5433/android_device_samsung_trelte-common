@@ -23,3 +23,8 @@ extern "C" {
     return _ZN7android13SensorManager13getSensorListEPPKPKNS_6SensorE(thiz, list);
   }
 }
+
+extern "C" int _ZN7android13SensorManagerD1Ev();
+extern "C" int _ZN7android13SensorManagerC1Ev() {
+    return _ZN7android13SensorManagerD1Ev();
+}
