@@ -19,9 +19,6 @@ TARGET_BOARD_PLATFORM := exynos5
 TARGET_SLSI_VARIANT := bsp
 TARGET_SOC := exynos5433
 
-# big.LITTLE load balancing
-ENABLE_CPUSETS := true
-
 TARGET_BOOTLOADER_BOARD_NAME := universal5433
 
 # Binder
