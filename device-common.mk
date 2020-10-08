@@ -137,13 +137,13 @@ PRODUCT_AAPT_PREF_CONFIG := 560dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 PRODUCT_PACKAGES += \
+    libion \
+    libfimg \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
-    libion \
-    hwcomposer.exynos5 \
-    libfimg
+    libhwc2on1adapter
 
 # Healthd
 PRODUCT_PACKAGES += \
