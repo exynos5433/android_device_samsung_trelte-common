@@ -819,3 +819,9 @@ service sswap /sbin/sswap -s -f 1536
     user root
     group root
     oneshot
+
+# ARGOSD
+service argos-daemon /vendor/bin/argosd
+    class main
+    user system
+    group system radio
