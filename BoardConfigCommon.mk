@@ -195,13 +195,6 @@ BOARD_USE_SINGLE_PLANE_IN_DRM := false
 # Power
 TARGET_POWERHAL_VARIANT := Trelte
 
-# Properties
-TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
-
-# Properties
-#TARGET_VENDOR_PROP_OVERRIDE := true
-#TARGET_VENDOR_PROP += device/samsung/trelte-common/vendor.prop
-
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5433

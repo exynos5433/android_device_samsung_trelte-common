@@ -2,16 +2,6 @@ COMMON_PATH := device/samsung/trelte-common
 
 PRODUCT_CHARACTERISTICS := phonemedia
 
-# ADB INSECURE
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
-    ro.debuggable=1 \
-    persist.service.adb.enable=1 \
-    persist.service.debuggable=1 \
-    persist.sys.usb.config=mtp,adb \
-    ro.product.first_api_level=19
-
 # Inherit products
 -include $(COMMON_PATH)/product/*.mk
 
@@ -50,12 +40,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-tre \
     android.hardware.bluetooth@1.0-service
-
-# Bluetooth workaround:
-# The new CAF code defaults to MCT HAL, but we
-# need the old H4 HAL for our Broadcom WiFi.
-PRODUCT_PROPERTY_OVERRIDES += \
-	qcom.bluetooth.soc=rome
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bt.bdaddr_path="/efs/bluetooth/bt_addr"
@@ -341,6 +325,9 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(COMMON_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf
+
+# Properties
+-include $(LOCAL_PATH)/system_prop.mk
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
