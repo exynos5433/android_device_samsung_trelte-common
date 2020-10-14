@@ -39,7 +39,8 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-tre \
-    android.hardware.bluetooth@1.0-service
+    android.hardware.bluetooth@1.0-service \
+    libbt-vendor
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bt.bdaddr_path="/efs/bluetooth/bt_addr"
