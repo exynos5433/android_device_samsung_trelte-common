@@ -30,11 +30,13 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.primary.universal5433 \
     libtinycompress \
-    libseirenhw
+    libseirenhw \
+    tinyplay
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(COMMON_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
+    $(COMMON_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
+    $(COMMON_PATH)/configs/audio/silence.wav:$(TARGET_COPY_OUT_VENDOR)/etc/silence.wav
 
 # Bluetooth
 PRODUCT_PACKAGES += \
