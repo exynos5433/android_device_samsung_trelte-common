@@ -73,9 +73,6 @@ BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 # Audio HAL variant
 TARGET_AUDIOHAL_VARIANT := samsung
 
-# Workaround for call audio mute after booting
-# BOARD_USE_MUTE_WORKAROUND := true
-
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
