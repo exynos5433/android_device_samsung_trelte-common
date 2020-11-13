@@ -112,6 +112,9 @@ PRODUCT_PACKAGES += \
 RODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
+# First Model API LEVEL
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
+
 ifeq ($(filter tre3gxx trelsktk trelte treltektt treltelgt trelteskt treltexx trhpltexx,$(TARGET_DEVICE)),)
 # FlipFlap
 PRODUCT_PACKAGES += \
