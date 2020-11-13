@@ -157,7 +157,7 @@ endif
 BOARD_HDMI_INCAPABLE := true
 
 # Hidl
-DEVICE_MANIFEST_FILE := device/samsung/trelte-common/configs/manifest.xml
+DEVICE_MANIFEST_FILE := device/samsung/trelte-common/manifest.xml
 
 # HWCServices
 #BOARD_USES_HWC_SERVICES := true
