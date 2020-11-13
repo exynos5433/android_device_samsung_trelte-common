@@ -267,9 +267,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service \
-    android.hardware.power@1.0-impl \
-    power.universal5433
+    android.hardware.power@1.0-service.exynos
 
 # IPv6
 PRODUCT_PACKAGES += \
