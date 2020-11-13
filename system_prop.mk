@@ -121,3 +121,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.get_imsi_from_sim=true \
     ro.ril.force_eri_from_xml=true \
     ro.telephony.mms_data_profile=5
+
+# Disable codec2
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.ccodec=0 \
+
