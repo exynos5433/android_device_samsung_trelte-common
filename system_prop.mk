@@ -124,5 +124,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Disable codec2
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.ccodec=0 \
+    debug.stagefright.ccodec=0
+
+# Widevine
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
+
 
