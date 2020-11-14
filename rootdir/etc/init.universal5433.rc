@@ -813,8 +813,8 @@ service lhd /system/vendor/bin/lhd /system/vendor/etc/lhd.conf
 # SENSOR FRAMEWORK : starts fingerprintService
 service vcsFPService /vendor/bin/vcsFPService
     class late_start
-    user system
-    group system
+    user root
+    group system input wakelock readproc
 
 on property:sys.mobicoredaemon.enable=true
     start cs_service
