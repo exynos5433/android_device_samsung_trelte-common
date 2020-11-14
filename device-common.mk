@@ -255,7 +255,7 @@ PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
     $(COMMON_PATH)/configs/permissions/com.samsung.permission.HRM_EXT.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.HRM_EXT.xml \
     $(COMMON_PATH)/configs/permissions/com.samsung.permission.SSENSOR.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.SSENSOR.xml \
-    $(COMMON_PATH)/configs/permissions/privapp-permissions-com.validity.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)etc/permissions/privapp-permissions-com.validity.fingerprint.xml
+    $(COMMON_PATH)/configs/permissions/privapp-permissions-validityservice.xml:$(TARGET_COPY_OUT_SYSTEM)etc/permissions/privapp-permissions-validityservice.xml
 
 # Trust HALTARGET_COPY_OUT_VENDOR
 PRODUCT_PACKAGES += \
