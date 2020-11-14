@@ -1,7 +1,7 @@
 cc_library_shared {
     name: "camera.universal5433",
     relative_install_path: "hw",
-
+    proprietary: true,
     srcs: [
         "CameraWrapper.cpp",
         "Camera2Wrapper.cpp",
