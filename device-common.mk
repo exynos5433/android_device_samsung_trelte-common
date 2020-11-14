@@ -85,9 +85,9 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #   AdvancedDisplay
 
-# Doze
-#PRODUCT_PACKAGES += \
-	TrelteDoze
+# SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
 
 # APEX
 PRODUCT_COPY_FILES += \
