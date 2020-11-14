@@ -108,6 +108,9 @@ PRODUCT_PACKAGES += \
     fingerprint.exynos5 \
     ValidityService
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/validityservice/etc/permissions/privapp-permissions-validityservice.xml:system/etc/permissions/privapp-permissions-validityservice.xml
+
 # Flat device tree for boot image
 RODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
@@ -255,9 +258,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
     $(COMMON_PATH)/configs/permissions/com.samsung.permission.HRM_EXT.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.HRM_EXT.xml \
-    $(COMMON_PATH)/configs/permissions/com.samsung.permission.SSENSOR.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.SSENSOR.xml \
-    $(COMMON_PATH)/configs/permissions/privapp-permissions-validityservice.xml:$(TARGET_COPY_OUT_SYSTEM)etc/permissions/privapp-permissions-validityservice.xml
-
+    $(COMMON_PATH)/configs/permissions/com.samsung.permission.SSENSOR.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.SSENSOR.xml
 # Trust HALTARGET_COPY_OUT_VENDOR
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
