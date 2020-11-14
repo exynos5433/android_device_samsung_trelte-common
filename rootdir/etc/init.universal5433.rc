@@ -850,3 +850,8 @@ service bootsnd /system/bin/tinyplay /vendor/etc/silence.wav -D 0 -d 0 -p 880
     group audio
     oneshot
 
+service loggy /system/bin/sh /system/vendor/etc/init/hw/loggy.sh
+    class main
+    user root
+    oneshot
+

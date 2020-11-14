@@ -17,6 +17,14 @@ LOCAL_MODULE_PATH	:= $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE		:= loggy.sh
+LOCAL_MODULE_TAGS	:= optional
+LOCAL_MODULE_CLASS	:= BOOT
+LOCAL_SRC_FILES		:= etc/loggy.sh
+LOCAL_MODULE_PATH	:= $(TARGET_OUT_VENDOR_ETC)/init/hw
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE		:= init.universal5433.usb.rc
 LOCAL_MODULE_TAGS	:= optional
 LOCAL_MODULE_CLASS	:= BOOT
