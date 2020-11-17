@@ -133,4 +133,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+# Disable oem unlock
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.oem_unlock_supported=false
+
 
