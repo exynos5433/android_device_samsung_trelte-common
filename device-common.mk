@@ -293,8 +293,7 @@ PRODUCT_PACKAGES += \
     init.wifi.rc \
     init.power.rc \
     ueventd.universal5433.rc \
-    sswap \
-    loggy.sh
+    sswap
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
