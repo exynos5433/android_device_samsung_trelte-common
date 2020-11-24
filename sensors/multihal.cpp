@@ -557,7 +557,7 @@ static void fix_sensor_fields(sensor_t& sensor) {
      */
     case SENSOR_TYPE_PROXIMITY:
         sensor.flags = SENSOR_FLAG_WAKE_UP | SENSOR_FLAG_ON_CHANGE_MODE;
-        sensor.maxRange = 5.0;
+        sensor.maxRange = 8.0;
         break;
     }
 }
