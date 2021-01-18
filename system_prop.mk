@@ -112,7 +112,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=false \
     ro.telephony.get_imsi_from_sim=true \
     ro.ril.force_eri_from_xml=true \
-    ro.telephony.mms_data_profile=5
+    ro.telephony.mms_data_profile=5 \
+    ro.gsm.sim.operator.iso-country=false
 
 # Disable codec2
 PRODUCT_PROPERTY_OVERRIDES += \
