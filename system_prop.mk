@@ -33,6 +33,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi / WiFi Display / Miracast
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
+    wifi.direct.interface=p2p-dev-wlan0 \
     wlan.wfd.hdcp=disable \
     persist.debug.wfd.enable=0 \
     persist.sys.wfd.virtual=0 \
