@@ -62,7 +62,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable ADB Debugging By Default & Disable USB Debugging Popup
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.adb.notify=0 \
     persist.service.adb.enable=1 \
     persist.service.debuggable=1 \
     persist.sys.usb.config=mtp,adb
