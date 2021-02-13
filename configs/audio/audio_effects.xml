@@ -27,23 +27,24 @@
         <effect name="lmfv" library="output_session_processing" uuid="989d9460-413d-11e1-8b0d-0002a5d5c51b"/>
         <effect name="fens" library="output_session_processing" uuid="cbcc5980-476d-11e1-82ee-0002a5d5c51b"/>
     </effects>
-    <postprocess>
-        <stream type="voice_call">
-            <apply effect="fens"/>
-            <apply effect="lmfv"/>
-        </stream>
-    </postprocess>
+
     <preprocess>
         <stream type="mic">
             <apply effect="agc"/>
             <apply effect="ns"/>
             <apply effect="aec"/>
         </stream>
-        <stream type="camcorder"/>
         <stream type="voice_communication">
             <apply effect="agc"/>
             <apply effect="ns"/>
             <apply effect="aec"/>
         </stream>
     </preprocess>
+
+    <postprocess>
+        <stream type="voice_call">
+            <apply effect="fens"/>
+            <apply effect="lmfv"/>
+        </stream>
+    </postprocess>
 </audio_effects_conf>
