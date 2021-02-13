@@ -4,12 +4,12 @@
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport arch="32">passthrough</transport>
-        <version>2.0</version>
+        <version>4.0</version>
     </hal>
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
         <transport arch="32">passthrough</transport>
-        <version>2.0</version>
+        <version>4.0</version>
     </hal>
     <hal format="hidl">
         <name>android.hardware.biometrics.fingerprint</name>
