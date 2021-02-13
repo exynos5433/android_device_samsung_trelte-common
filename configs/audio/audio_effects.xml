@@ -46,5 +46,9 @@
             <apply effect="fens"/>
             <apply effect="lmfv"/>
         </stream>
+        <stream type="voice_communication">
+            <apply effect="fens"/>
+            <apply effect="lmfv"/>
+        </stream>
     </postprocess>
 </audio_effects_conf>
