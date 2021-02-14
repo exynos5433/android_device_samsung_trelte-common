@@ -30,15 +30,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # HWC
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=1 \
-    debug.sf.disable_backpressure=1
+    debug.sf.disable_backpressure=1 \
+    debug.hwc.winupdate=1
 
 # Wifi / WiFi Display / Miracast
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.direct.interface=p2p-dev-wlan0 \
     wlan.wfd.hdcp=disable \
-    persist.debug.wfd.enable=0 \
-    persist.sys.wfd.virtual=0 \
     net.tethering.noprovisioning=true \
     ro.hdmi.enable=true \
     ro.hdmi.mirror.enable=true
@@ -100,6 +99,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=19
 
+# Keystore
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=mdfpp
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=0 \
@@ -133,7 +136,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Configstore
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+
+# SLSI
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.slsi_platform=1
+
+# WiFi Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.wfdsupport=1
+
 
 
 
