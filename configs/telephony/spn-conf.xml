@@ -79,7 +79,6 @@ examples:
 
 <!-- PAN -->
     <spnOverride numeric="21601" spn_display_rule="SPN_RULE_SHOW_PLMN" spn_override_only_on="21601"/>
-    <spnOverride numeric="21603" vowifi_opname="DIGI HU"/>
 
     <spnOverride numeric="21901" vowifi_opname="HT HR WiFi"/>
 
@@ -93,9 +92,6 @@ examples:
     <spnOverride numeric="22801" fake_home_on="29501"/>
     <spnOverride numeric="22803" fake_home_on="29502"/>
     <spnOverride numeric="29502" fake_home_on="22803"/>
-
-<!-- UPC -->
-    <spnOverride numeric="22853" fake_home_on="22801,22803"/>
 
 <!-- Czech -->
     <spnOverride numeric="23001" vowifi_opname="T-Mobile CZ WiFi"/>
@@ -157,6 +153,7 @@ examples:
 <!-- SENA -->
     <spnOverride numeric="24001" spn_display_rule="SPN_RULE_SHOW_SPN" spn_override_only_on="24005"/>
     <spnOverride numeric="24007" imsi_subset="68" fake_home_on="24202,24205"/>
+    <spnOverride numeric="24007" imsi_subset="560" vowifi_opname="Sky"/>
     <spnOverride numeric="24007" spn_display_rule="SPN_RULE_SHOW_SPN" spn_override_only_on="24005"/>
 
 <!-- Finland -->
@@ -339,6 +336,6 @@ examples:
     <spnOverride numeric="73401" fake_home_on="73401,73402,73403"/>
     <spnOverride numeric="73402" fake_home_on="73401,73402,73403"/>
     <spnOverride numeric="73403" fake_home_on="73401,73402,73403"/>
-    <spnOverride numeric="74002" fake_home_on="74000,74001"/>
+    <spnOverride numeric="74002" fake_home_on="74000"/>
 
 </spnOverrides>
