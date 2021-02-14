@@ -118,6 +118,10 @@ PRODUCT_COPY_FILES += \
 RODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
+# FastCharge
+PRODUCT_PACKAGES += \
+    vendor.lineage.fastcharge@1.0-service.samsung
+
 # First Model API LEVEL
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 
