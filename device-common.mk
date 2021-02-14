@@ -283,12 +283,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service.exynos
 
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    libebtc
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.universal5433 \
