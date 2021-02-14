@@ -35,7 +35,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi / WiFi Display / Miracast
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.direct.interface=p2p-dev-wlan0 \
     wlan.wfd.hdcp=disable \
     net.tethering.noprovisioning=true \
     ro.hdmi.enable=true \
