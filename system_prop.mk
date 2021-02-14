@@ -23,7 +23,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
-    ro.sf.lcd_density=560 \
     ro.hardware.egl=mali \
     ro.hardware.vulkan=mali
 
