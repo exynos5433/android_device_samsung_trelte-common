@@ -416,10 +416,11 @@ on fs
 
 on late-fs
     # Start services for bootanim
+    start servicemanager
     start surfaceflinger
     start bootanim
-    start configstore-hal-1-0
-    start gralloc-2-0
+    start vendor.configstore-hal
+    start vendor.gralloc-2-0
 
 # MTP device permission
     chmod 0660 /dev/usb_mtp_gadget
