@@ -423,9 +423,9 @@
             when evaluating RSRP for LTE antenna bar display
            0. Strict threshold
            1. Lenient threshold
+           2. Custom threshold
     -->
-	<!-- TODO: Uncomment this if Lineage has re-added support -->
-    <!-- <integer name="config_LTE_RSRP_threshold_type">1</integer> -->
+    <integer name="config_LTE_RSRP_threshold_type">2</integer>
 
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
@@ -523,5 +523,7 @@
     <!-- Whether to post reset runnable for all clients. Needed for some older
          vendor fingerprint HAL implementations. -->
     <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
+
+   
 
 </resources>
