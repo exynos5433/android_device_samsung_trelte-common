@@ -125,14 +125,12 @@ PRODUCT_PACKAGES += \
 # First Model API LEVEL
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 
-ifeq ($(filter tre3gxx trelsktk trelte treltektt treltelgt trelteskt treltexx trhpltexx,$(TARGET_DEVICE)),)
 # FlipFlap
 PRODUCT_PACKAGES += \
     FlipFlap
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flp.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/flp.conf
-endif
 
 # Gps
 PRODUCT_PACKAGES += \
