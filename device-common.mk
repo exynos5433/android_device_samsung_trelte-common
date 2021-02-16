@@ -286,7 +286,6 @@ PRODUCT_PACKAGES += \
     init.universal5433.usb.rc \
     init.samsung.rc \
     init.wifi.rc \
-    init.power.rc \
     ueventd.universal5433.rc \
     sswap
 
