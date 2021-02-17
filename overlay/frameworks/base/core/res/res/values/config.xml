@@ -419,14 +419,6 @@
 	<!-- TODO: Uncomment this if Lineage has re-added support -->
     <!-- <bool name="config_carrier_volte_provisioned">true</bool> -->
 
-    <!-- Flag indicating whether strict threshold is used, or lenient threshold is used,
-            when evaluating RSRP for LTE antenna bar display
-           0. Strict threshold
-           1. Lenient threshold
-           2. Custom threshold
-    -->
-    <integer name="config_LTE_RSRP_threshold_type">2</integer>
-
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
@@ -580,5 +572,4 @@
          running in WAL mode.
          Choices are: FULL, NORMAL, OFF. -->
     <string name="db_wal_sync_mode" translatable="false">NORMAL</string>
-
 </resources>
