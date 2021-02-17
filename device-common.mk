@@ -309,8 +309,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.tre \
-    android.hardware.sensors@1.0-service.tre \
+    android.hardware.sensors@1.0-impl.universal5433 \
+    android.hardware.sensors@1.0-service.universal5433 \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service \
     sensors.exynos5
