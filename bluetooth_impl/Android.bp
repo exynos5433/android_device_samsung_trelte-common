@@ -14,7 +14,7 @@
 // limitations under the License.
 
 cc_library_shared {
-    name: "android.hardware.bluetooth@1.0-impl-tre",
+    name: "android.hardware.bluetooth@1.0-impl-universal5433",
     defaults: ["hidl_defaults"],
     vendor: true,
     relative_install_path: "hw",
