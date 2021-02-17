@@ -104,7 +104,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service.tre
+    android.hardware.biometrics.fingerprint@2.0-service.universal5433
 
 # Fingerprint
 PRODUCT_PACKAGES += \
