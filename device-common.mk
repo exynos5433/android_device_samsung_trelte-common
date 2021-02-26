@@ -104,11 +104,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service.universal5433
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    fingerprint.exynos5 \
+    android.hardware.biometrics.fingerprint@2.1-service \
+    fingerprint.universal5433 \
     ValidityService
 
 PRODUCT_COPY_FILES += \
