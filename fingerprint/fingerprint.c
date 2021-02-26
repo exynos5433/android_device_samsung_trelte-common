@@ -325,6 +325,9 @@ static int fingerprint_cancel(struct fingerprint_device *device) {
     uint8_t command[1] = {CALL_CANCEL};
     ret = sendcommand(vdev, command, 1);
     pthread_mutex_unlock(&vdev->lock);
+	
+    // Not really an error, but framework expects us to send it.
+    send_error_notice(vdev, FINGERPRINT_ERROR_CANCELED);
 
     return ret;
 }
