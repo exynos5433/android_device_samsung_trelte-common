@@ -77,10 +77,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.ffs.aio_compat=1
 #    persist.sys.usb.config=mtp
 
-# Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bt.enableAptXHD=true
-
 # LMK
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.fha_enable=true \
