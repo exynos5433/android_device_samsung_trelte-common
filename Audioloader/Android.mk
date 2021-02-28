@@ -22,7 +22,8 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES:= Audioloader.cpp
 
 LOCAL_SHARED_LIBRARIES := \
-    libmedia
+    libmedia \
+    libaudioclient
 
 LOCAL_MODULE:= Audioloader
 LOCAL_MODULE_TAGS:= optional

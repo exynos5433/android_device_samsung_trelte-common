@@ -13,6 +13,8 @@
  *
  */
 
+#include "media/ToneGenerator.h"
+
 using android::ToneGenerator;
 
 int main(int argc, char *argv[])
