@@ -31,7 +31,8 @@ PRODUCT_PACKAGES += \
     audio.primary.universal5433 \
     libtinycompress \
     libseirenhw \
-    tinyplay
+    tinyplay \
+    Audioloader
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
