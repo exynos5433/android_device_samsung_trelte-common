@@ -1,5 +1,3 @@
-#include <media/ToneGenerator.h>
-
 /*
  * For some inexplicable reason, after booting there is no in-call audio,
  * either incoming or outgoing. There is no apparent reason for this as  all 
