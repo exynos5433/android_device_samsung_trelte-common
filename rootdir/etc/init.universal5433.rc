@@ -830,7 +830,7 @@ service fingerprintd /system/bin/fingerprintd
 service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     class main
     user gps
-    group system inet net_raw
+    group system inet net_raw wakelock
     ioprio be 0
 
 service swapon /sbin/sswap -s -f 1536
