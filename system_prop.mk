@@ -17,8 +17,7 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
-    audio_hal.force_voice_config=wide \
-    audio_hal.disable_two_mic=true
+    audio_hal.force_voice_config=wide
 	
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
