@@ -267,5 +267,5 @@ void vendor_load_properties()
     LOG(ERROR) << "Found bootloader id " << bootloader << " setting build properties for " << device << " device" << std::endl;
 	
     // Workaround SafetyNet
-    workaround_snet_properties();
+    //workaround_snet_properties();
 }
