@@ -41,9 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wlan.wfd.hdcp=disable \
     net.tethering.noprovisioning=true \
     ro.hdmi.enable=true \
-    ro.hdmi.mirror.enable=true \
-    wifi.direct.interface=p2p-dev-wlan0
-
+    ro.hdmi.mirror.enable=true
 
 # Define default initial receive window size in segments.
 PRODUCT_PROPERTY_OVERRIDES += \
