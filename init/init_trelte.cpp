@@ -123,6 +123,36 @@ void vendor_load_properties()
         }
         property_override("ro.build.description", "trhpltexx-user 6.0.1 MMB29K N910UXXU2DSA1 release-keys");
         lte_properties();
+    } else if (bootloader.find("N910S") == 0) {
+        /* trelteskt */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/trelteskt/trelteskt:6.0.1/MMB29K/N910SKSU2DSA1:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N910S");
+            set_ro_product_prop(source, "device", "trelteskt");
+            set_ro_product_prop(source, "name", "trelteskt");
+        }
+        property_override("ro.build.description", "trelteskt-user 6.0.1 MMB29K N910SKSU2DSA1 release-keys");
+        lte_properties();
+    } else if (bootloader.find("N910L") == 0) {
+        /* treltelgt */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/treltelgt/treltelgt:6.0.1/MMB29K/N910LKLU2DSA1:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N910L");
+            set_ro_product_prop(source, "device", "treltelgt");
+            set_ro_product_prop(source, "name", "treltelgt");
+        }
+        property_override("ro.build.description", "treltelgt-user 6.0.1 MMB29K N910LKLU2DSA1 release-keys");
+        lte_properties();
+    } else if (bootloader.find("N910K") == 0) {
+        /* treltektt */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/treltektt/treltektt:6.0.1/MMB29K/N910KKTU2DSA1:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N910K");
+            set_ro_product_prop(source, "device", "treltektt");
+            set_ro_product_prop(source, "name", "treltektt");
+        }
+        property_override("ro.build.description", "treltektt-user 6.0.1 MMB29K N910KKTU2DSA1 release-keys");
+        lte_properties();
     } else {
         lte_properties();
     }
