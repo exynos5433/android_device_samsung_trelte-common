@@ -93,6 +93,30 @@ void vendor_load_properties()
         property_override(prop_name.c_str(), value.c_str(), false);
     };
 
+    if (bootloader.find("N910C") == 0) {
+        /* treltexx */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DSA2:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N910C");
+            set_ro_product_prop(source, "device", "trelte");
+            set_ro_product_prop(source, "name", "treltexx");
+        }
+        property_override("ro.build.description", "treltexx-user 6.0.1 MMB29K N910CXXU2DSA2 release-keys");
+        lte_properties();
+    } else if (bootloader.find("N910H") == 0) {
+        /* tre3gxx */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/tre3gxx/tre3g:6.0.1/MMB29K/N910HXXS2DSB2:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N910H");
+            set_ro_product_prop(source, "device", "tre3g");
+            set_ro_product_prop(source, "name", "tre3gxx");
+        }
+        property_override("ro.build.description", "tre3gxx-user 6.0.1 MMB29K N910HXXS2DSB2 release-keys");
+        nonlte_properties();
+    } else {
+        lte_properties();
+    }
+
     std::string device = GetProperty("ro.product.device", "");
     LOG(ERROR) << "Found bootloader id " << bootloader << " setting build properties for " << device << " device" << std::endl;
 }
