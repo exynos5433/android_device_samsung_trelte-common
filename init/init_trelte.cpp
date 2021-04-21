@@ -115,7 +115,7 @@ void lte_properties()
 void nonlte_properties()
 {
     property_set("telephony.lteOnGsmDevice", "0");
-    property_set("ro.telephony.default_network", "0");
+    property_set("ro.telephony.default_network", "3");
 }
 
 static void workaround_snet_properties() {
