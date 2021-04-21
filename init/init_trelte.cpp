@@ -183,6 +183,36 @@ void vendor_load_properties()
         }
         property_override("ro.build.description", "tbeltektt-user 6.0.1 MMB29K N915KKTU2DSA1 release-keys");
         lte_properties();
+    } else if (bootloader.find("N916S") == 0) {
+        /* tre3calteskt  */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/tre3calteskt /tre3calteskt :6.0.1/MMB29K/N916SKSU2DSA1:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N916S");
+            set_ro_product_prop(source, "device", "tre3calteskt ");
+            set_ro_product_prop(source, "name", "tre3calteskt ");
+        }
+        property_override("ro.build.description", "tre3calteskt -user 6.0.1 MMB29K N916SKSU2DSA1` release-keys");
+        lte_properties();
+    } else if (bootloader.find("N916L") == 0) {
+        /* tre3caltelgt */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/tre3caltelgt/tre3caltelgt:6.0.1/MMB29K/N916LKLU2DSA1:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N916L");
+            set_ro_product_prop(source, "device", "tre3caltelgt");
+            set_ro_product_prop(source, "name", "tre3caltelgt");
+        }
+        property_override("ro.build.description", "tre3caltelgt-user 6.0.1 MMB29K N916LKLU2DSA1 release-keys");
+        lte_properties();
+    } else if (bootloader.find("N916K") == 0) {
+        /* tre3caltektt */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/tre3caltektt/tre3caltektt:6.0.1/MMB29K/N916KKTU2DSA1:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N916K");
+            set_ro_product_prop(source, "device", "tre3caltektt");
+            set_ro_product_prop(source, "name", "tre3caltektt");
+        }
+        property_override("ro.build.description", "tre3caltektt-user 6.0.1 MMB29K N916KKTU2DSA1 release-keys");
+        lte_properties();
     } else {
         lte_properties();
     }
