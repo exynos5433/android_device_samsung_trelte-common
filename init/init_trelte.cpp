@@ -35,6 +35,8 @@
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 #include <android-base/file.h>
 #include <android-base/logging.h>
@@ -60,6 +62,39 @@ std::vector<std::string> ro_product_props_default_source_order = {
     "system.",
 };
 
+/* From Magisk@jni/magiskhide/hide_utils.c */
+static const char *snet_prop_key[] = {
+  "ro.boot.vbmeta.device_state",
+  "ro.boot.verifiedbootstate",
+  "ro.boot.flash.locked",
+  "ro.boot.selinux",
+  "ro.boot.veritymode",
+  "ro.boot.warranty_bit",
+  "ro.warranty_bit",
+  "ro.debuggable",
+  "ro.secure",
+  "ro.build.type",
+  "ro.build.tags",
+  "ro.build.selinux",
+  NULL
+};
+
+static const char *snet_prop_value[] = {
+  "locked",
+  "green",
+  "1",
+  "enforcing",
+  "enforcing",
+  "0",
+  "0",
+  "0",
+  "1",
+  "user",
+  "release-keys",
+  "1",
+  NULL
+};
+
 void property_override(char const prop[], char const value[], bool add = true)
 {
     auto pi = (prop_info *) __system_property_find(prop);
@@ -81,6 +116,17 @@ void nonlte_properties()
 {
     property_set("telephony.lteOnGsmDevice", "0");
     property_set("ro.telephony.default_network", "0");
+}
+
+static void workaround_snet_properties() {
+
+  // Hide all sensitive props
+  for (int i = 0; snet_prop_key[i]; ++i) {
+    property_override(snet_prop_key[i], snet_prop_value[i]);
+  }
+
+  chmod("/sys/fs/selinux/enforce", 0640);
+  chmod("/sys/fs/selinux/policy", 0440);
 }
 
 void vendor_load_properties()
@@ -219,4 +265,7 @@ void vendor_load_properties()
 
     std::string device = GetProperty("ro.product.device", "");
     LOG(ERROR) << "Found bootloader id " << bootloader << " setting build properties for " << device << " device" << std::endl;
+	
+    // Workaround SafetyNet
+    workaround_snet_properties();
 }
