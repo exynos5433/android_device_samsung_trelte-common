@@ -71,6 +71,18 @@ void property_override(char const prop[], char const value[], bool add = true)
     }
 }
 
+void lte_properties()
+{
+    property_set("telephony.lteOnGsmDevice", "1");
+    property_set("ro.telephony.default_network", "9");
+}
+
+void nonlte_properties()
+{
+    property_set("telephony.lteOnGsmDevice", "0");
+    property_set("ro.telephony.default_network", "0");
+}
+
 void vendor_load_properties()
 {
     std::string bootloader = GetProperty("ro.bootloader", "");
