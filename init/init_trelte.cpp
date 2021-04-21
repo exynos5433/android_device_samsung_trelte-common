@@ -113,6 +113,16 @@ void vendor_load_properties()
         }
         property_override("ro.build.description", "tre3gxx-user 6.0.1 MMB29K N910HXXS2DSB2 release-keys");
         nonlte_properties();
+    } else if (bootloader.find("N910U") == 0) {
+        /* trhpltexx */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/trhpltexx/trhplte:6.0.1/MMB29K/N910UXXU2DSA1:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N910U");
+            set_ro_product_prop(source, "device", "trhplte");
+            set_ro_product_prop(source, "name", "trhpltexx");
+        }
+        property_override("ro.build.description", "trhpltexx-user 6.0.1 MMB29K N910UXXU2DSA1 release-keys");
+        lte_properties();
     } else {
         lte_properties();
     }
