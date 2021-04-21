@@ -93,7 +93,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=0 \
     persist.radio.sib16_support=0 \
     ro.ril.telephony.mqanelements=6 \
-    ro.telephony.default_network=9 \
     ro.use_data_netmgrd=false \
     persist.data.netmgrd.qos.enable=false \
     ro.ril.hsxpa=1 \
