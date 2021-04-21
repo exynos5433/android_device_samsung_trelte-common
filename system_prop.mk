@@ -80,18 +80,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.ffs.aio_compat=1
 #    persist.sys.usb.config=mtp
 
-# LMK
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.fha_enable=true \
-    ro.sys.fw.bg_apps_limit=32 \
-    ro.config.dha_cached_max=16 \
-    ro.config.dha_empty_max=42 \
-    ro.config.dha_empty_init=32 \
-    ro.config.dha_lmk_scale=0.545 \
-    ro.config.dha_th_rate=2.3 \
-    ro.config.sdha_apps_bg_max=64 \
-    ro.config.sdha_apps_bg_min=8
-
 # First API Level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=19
