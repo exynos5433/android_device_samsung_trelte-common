@@ -260,6 +260,14 @@ void vendor_load_properties()
         property_override("ro.build.description", "tre3caltektt-user 6.0.1 MMB29K N916KKTU2DSA1 release-keys");
         lte_properties();
     } else {
+        /* treltexx */
+        for (const auto &source : ro_product_props_default_source_order) {
+            set_ro_product_prop(source, "fingerprint", "samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DSA2:user/release-keys");
+            set_ro_product_prop(source, "model", "SM-N910C");
+            set_ro_product_prop(source, "device", "trelte");
+            set_ro_product_prop(source, "name", "treltexx");
+        }
+        property_override("ro.build.description", "treltexx-user 6.0.1 MMB29K N910CXXU2DSA2 release-keys");
         lte_properties();
     }
 
