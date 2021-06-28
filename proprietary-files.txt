@@ -176,6 +176,7 @@ lib/hw/sensors.universal5433.so:vendor/lib/sensors.vendor.tre.so
 
 # HeartRate Monitor
 lib/libhr.so:vendor/lib/libhr.so
+lib/libagc_max.so:vendor/lib/libagc_max.so
 
 # Sensorshub
 lib/hw/sensorhubs.universal5433.so:vendor/lib/hw/sensorhubs.universal5433.so
