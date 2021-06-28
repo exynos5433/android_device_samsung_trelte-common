@@ -1,0 +1,270 @@
+# All unpinned blobs are from N910CXXS2DRL1...probably
+# Vendor security patch level 2017-08-01
+
+# WiFi kernel QoS
+bin/argosd:vendor/bin/argosd
+
+# WiFi Firmware
+etc/wifi/bcmdhd_apsta.bin:vendor/etc/wifi/bcmdhd_apsta.bin
+etc/wifi/bcmdhd_ibss.bin:vendor/etc/wifi/bcmdhd_ibss.bin
+etc/wifi/bcmdhd_mfg.bin:vendor/etc/wifi/bcmdhd_mfg.bin
+etc/wifi/bcmdhd_sta.bin:vendor/etc/wifi/bcmdhd_sta.bin
+etc/wifi/cred.conf:vendor/etc/wifi/cred.conf
+etc/wifi/nvram_mfg.txt:vendor/etc/wifi/nvram_mfg.txt
+etc/wifi/nvram_mfg.txt_a0:vendor/etc/wifi/nvram_mfg.txt_a0
+etc/wifi/nvram_mfg.txt_murata:vendor/etc/wifi/nvram_mfg.txt_murata
+etc/wifi/nvram_net.txt:vendor/etc/wifi/nvram_net.txt
+etc/wifi/nvram_net.txt_a0:vendor/etc/wifi/nvram_net.txt_a0
+etc/wifi/nvram_net.txt_murata:vendor/etc/wifi/nvram_net.txt_murata
+etc/wifi/olsrd.conf:vendor/etc/wifi/olsrd.conf
+
+# Bluetooth firmware
+vendor/firmware/bcm4358A0_V0033.0000.hcd
+vendor/firmware/bcm4358A1_V0054.0094.hcd
+
+# aptX - from marlin - OPM1.171019.011
+lib/libaptX_encoder.so:vendor/lib/libaptX_encoder.so|984739a0bc968e18f75ced205733fe3f51c2d4f0
+
+# Camera
+lib/hw/camera.universal5433.so:vendor/lib/hw/camera.vendor.universal5433.so
+lib/libexynoscamera.so:vendor/lib/libexynoscamera.so
+lib/libvdis.so:vendor/lib/libvdis.so
+lib/libhwjpeg.so:vendor/lib/libhwjpeg.so
+vendor/firmware/setfile_6d1.bin
+vendor/firmware/setfile_imx240.bin
+
+# Graphics - from A800J/SCV32 - SCV32KDU1CQK3
+vendor/lib/egl/libGLES_mali.so|fe15d2d8a0060022650631cf4e481c377241b6e7
+vendor/lib/egl/libGLES_mali.so:vendor/lib/hw/vulkan.exynos5.so|fe15d2d8a0060022650631cf4e481c377241b6e7
+
+# NXP Noise supppression
+vendor/lib/liblvverx_3.25.00.so:vendor/lib/soundfx/liblvverx.so|575865ce767dd1ab576118ba47254799757a2a1b
+vendor/lib/liblvvetx_3.25.00.so:vendor/lib/soundfx/liblvvetx.so|a99afe8a6c44a9434284f9836976ab3ad2acbe91
+vendor/lib/liblvverx_3.25.00.so:vendor/lib/liblvverx.so|575865ce767dd1ab576118ba47254799757a2a1b
+vendor/lib/liblvvetx_3.25.00.so:vendor/lib/liblvvetx.so|a99afe8a6c44a9434284f9836976ab3ad2acbe91
+vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_ANALOG_DOCK.txt
+vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/BargeIn/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/BargeInDriving/Tx_ControlParams_WIDEBAND_ANALOG_DOCK.txt
+vendor/etc/nxp/BargeInDriving/Tx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/BargeInDriving/Tx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/BargeInDriving/Tx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/BargeInDriving/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/BargeInDriving/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/LVVEFS_Rx_Configuration.txt
+vendor/etc/nxp/LVVEFS_Tx_Configuration.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_NARROWBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_NARROWBAND_EARPIECE.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_NARROWBAND_SPEAKER.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_NARROWBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_NARROWBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/VideoTelephony/Rx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_NARROWBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_NARROWBAND_EARPIECE.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_NARROWBAND_SPEAKER.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_NARROWBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_NARROWBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/VideoTelephony/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_NARROWBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_NARROWBAND_EARPIECE.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_NARROWBAND_SPEAKER.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_NARROWBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_NARROWBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/mVoIP/Rx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_NARROWBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_NARROWBAND_EARPIECE.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_NARROWBAND_SPEAKER.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_NARROWBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_NARROWBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/mVoIP/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/mVoIPFMC/Rx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/mVoIPFMC/Rx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/mVoIPFMC/Rx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/mVoIPFMC/Rx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/mVoIPFMC/Rx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/mVoIPFMC/Tx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/mVoIPFMC/Tx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/mVoIPFMC/Tx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/mVoIPFMC/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/mVoIPFMC/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/mVoIPSec/Rx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/mVoIPSec/Rx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/mVoIPSec/Rx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/mVoIPSec/Rx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/mVoIPSec/Rx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
+vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_EARPIECE.txt
+vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_SPEAKER.txt
+vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
+vendor/etc/nxp/mVoIPSec/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
+
+# DRM
+lib/liboemcrypto.so:vendor/lib/liboemcrypto.so
+
+# Widevine - from N935FXXS7CTJ2
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine|2721d7cbd6730d76d08cfd6d32c1bbaca715fb93
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|6d73a2063f155dcbd5ba95ca2d85e184cda61127
+vendor/lib/libwvhidl.so|fe6c10197d4b947bbb5431700bc79e937234f5e6
+vendor/lib/mediadrm/libwvdrmengine.so|ea269c91c0089c4f9a53a248eacf3adbd5717dfd
+
+# HEVC for v4l2
+vendor/firmware/hevc_fw.bin
+
+# S5P Multi Format Codec
+vendor/firmware/mfc_fw.bin
+
+# Image subsystem
+vendor/firmware/fimc_is_fw2_imx240.bin
+vendor/firmware/fimc_is_ois_63A.bin
+vendor/firmware/fimc_is_ois_63B.bin
+vendor/firmware/companion_default_coef.bin
+vendor/firmware/companion_default_lsc.bin
+vendor/firmware/companion_fw_imx240_evt1.bin
+vendor/firmware/companion_imx240_master_setfile.bin
+vendor/firmware/companion_imx240_mode_setfile.bin
+
+# Audio Firmware
+etc/firmware/florida-dsp1-edac.bin
+etc/firmware/florida-dsp1-edac.wmfw
+etc/firmware/florida-dsp2-tx-fb-meeting.bin
+etc/firmware/florida-dsp2-tx-fb-meeting.wmfw
+etc/firmware/florida-dsp2-tx-nb.wmfw
+etc/firmware/florida-dsp2-tx-swb.wmfw
+etc/firmware/florida-dsp2-tx-wb.wmfw
+etc/firmware/florida-dsp3-ez2-control.wmfw
+etc/firmware/florida-dsp3-lpsd-control.bin
+etc/firmware/florida-dsp3-tx-nb.bin
+etc/firmware/florida-dsp3-tx-nb.wmfw
+etc/firmware/florida-dsp3-tx-swb-conversation.bin
+etc/firmware/florida-dsp3-tx-swb-interview.bin
+etc/firmware/florida-dsp3-tx-swb.wmfw
+etc/firmware/florida-dsp3-tx-wb-meeting.bin
+etc/firmware/florida-dsp3-tx-wb-meeting.wmfw
+etc/firmware/florida-dsp3-tx-wb.bin
+etc/firmware/florida-dsp3-tx-wb.wmfw
+etc/firmware/florida-dsp4-dsm.wmfw
+etc/firmware/florida-dsp4-rx-anc-nb.bin
+etc/firmware/florida-dsp4-rx-anc-nb.wmfw
+etc/firmware/florida-dsp4-rx-anc-wb.bin
+etc/firmware/florida-dsp4-rx-anc-wb.wmfw
+
+# Audio Decoder
+vendor/firmware/seiren_fw_dram.bin
+vendor/firmware/seiren_fw_sram.bin
+
+# Sensors HAL
+lib/hw/sensors.universal5433.so:vendor/lib/sensors.vendor.tre.so
+
+# HeartRate Monitor
+lib/libhr.so:vendor/lib/libhr.so
+
+# Sensorshub
+lib/hw/sensorhubs.universal5433.so:vendor/lib/hw/sensorhubs.universal5433.so
+etc/lhd.conf:vendor/etc/lhd.conf
+bin/lhd:vendor/bin/lhd
+bin/bcm_sensorhub_a2.patch:vendor/bin/bcm_sensorhub_a2.patch
+bin/sensorhubservice:vendor/bin/sensorhubservice
+lib/libsensorhub.so:vendor/lib/libsensorhub.so
+lib/libsensorhubservice.so:vendor/lib/libsensorhubservice.so
+lib/libsensorlistener.so:vendor/lib/libsensorlistener.so
+lib/libgnustl_shared.so:vendor/lib/libgnustl_shared.so
+
+# IR Blaster
+lib/hw/consumerir.exynos5.so:vendor/lib/hw/consumerir.exynos5.so
+
+# GPS
+bin/gpsd:vendor/bin/gpsd|8921de4a04f99ab85f4aa701ea67bd39e86185f8
+bin/gps.cer:vendor/bin/gps.cer
+lib/hw/gps.default.so:vendor/lib/hw/gps.universal5433.so
+lib/libwrappergps.so:vendor/lib/libwrappergps.so
+
+# NFC
+lib/hw/nfc_nci.universal5433.so:vendor/lib/hw/nfc_nci.universal5433.so|300970563dc0f4f79426ce5adad43df190491867
+
+# Fingerprint
+bin/vcsFPService:vendor/bin/vcsFPService
+lib/libfpasmtztransport.so:vendor/lib/libfpasmtztransport.so
+lib/libvalAuth.so:vendor/lib/libvalAuth.so
+lib/libvcsfp.so:vendor/lib/libvcsfp.so
+lib/libvfmClient.so:vendor/lib/libvfmClient.so
+lib/libvfmtztransport.so:vendor/lib/libvfmtztransport.so
+
+# Mobicore
+bin/mcDriverDaemon
+lib/libMcClient.so
+lib/libMcRegistry.so
+app/FFFFFFFF000000000000000000000001.drbin
+app/mcRegistry/07010000000000000000000000000000.tlbin
+app/mcRegistry/07060000000000000000000000000000.tlbin
+app/mcRegistry/00060308060501020000000000000000.tlbin
+app/mcRegistry/02010000080300030000000000000000.tlbin
+app/mcRegistry/ffffffff00000000000000000000000a.tlbin
+app/mcRegistry/ffffffff00000000000000000000000b.tlbin
+app/mcRegistry/ffffffff00000000000000000000000c.tlbin
+app/mcRegistry/ffffffff00000000000000000000000d.tlbin
+app/mcRegistry/ffffffff00000000000000000000000e.tlbin
+app/mcRegistry/ffffffff00000000000000000000000f.tlbin
+app/mcRegistry/ffffffff000000000000000000000004.tlbin
+app/mcRegistry/ffffffff000000000000000000000005.tlbin
+app/mcRegistry/ffffffff000000000000000000000011.tlbin
+app/mcRegistry/ffffffff000000000000000000000012.tlbin
+app/mcRegistry/ffffffff000000000000000000000013.tlbin
+app/mcRegistry/ffffffff000000000000000000000014.tlbin
+app/mcRegistry/ffffffff000000000000000000000016.tlbin
+app/mcRegistry/ffffffff000000000000000000000017.tlbin
+app/mcRegistry/ffffffff000000000000000000000018.tlbin
+app/mcRegistry/ffffffff000000000000000000000019.tlbin
+app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
+app/mcRegistry/ffffffffd0000000000000000000000e.tlbin
+app/mcRegistry/ffffffffd00000000000000000000004.tlbin
+app/mcRegistry/ffffffffd00000000000000000000014.tlbin
+app/mcRegistry/ffffffffd00000000000000000000016.tlbin
+app/mcRegistry/fffffffff0000000000000000000001e.tlbin
+
+# RIL
+etc/plmn_delta.bin
+lib/libprotobuf-cpp-full.so:vendor/lib/libprotobuf-cpp-fooo.so
+lib/libsecnativefeature.so:vendor/lib/libsecnativefeature.so
+lib/libfloatingfeature.so:vendor/lib/libfloatingfeature.so
+
+# IPSecVoLTE
+bin/diagexe
+bin/IPSecService
+bin/mlexe
+bin/mmd
+
+# Reactivation Lock
+bin/reactived
+
+# LPM - Stock Charging Animation
+bin/lpm:vendor/bin/lpm|d2f7e9e5911d7c797ae33b9b0d5a5e0c3a5fbf9e
+lib/libmaet.so
+lib/libsxqk_skia.so
+media/battery_cover.spi:vendor/media/battery_cover.spi
+media/battery_error.spi:vendor/media/battery_error.spi
+media/battery_low.spi:vendor/media/battery_low.spi
+media/battery_temperature_error.spi:vendor/media/battery_temperature_error.spi
+media/battery_temperature_limit.spi:vendor/media/battery_temperature_limit.spi
+media/dock_error.spi:vendor/media/dock_error.spi
+media/incompatible_charger.spi:vendor/media/incompatible_charger.spi
+media/lcd_density.txt:vendor/media/lcd_density.txt
+media/percentage.spi:vendor/media/percentage.spi
