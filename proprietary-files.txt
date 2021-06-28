@@ -246,12 +246,6 @@ lib/libprotobuf-cpp-full.so:vendor/lib/libprotobuf-cpp-fooo.so
 lib/libsecnativefeature.so:vendor/lib/libsecnativefeature.so
 lib/libfloatingfeature.so:vendor/lib/libfloatingfeature.so
 
-# IPSecVoLTE
-bin/diagexe
-bin/IPSecService
-bin/mlexe
-bin/mmd
-
 # Reactivation Lock
 bin/reactived
 
