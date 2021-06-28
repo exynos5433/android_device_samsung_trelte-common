@@ -195,6 +195,7 @@ lib/hw/consumerir.exynos5.so:vendor/lib/hw/consumerir.exynos5.so
 bin/gpsd:vendor/bin/gpsd|8921de4a04f99ab85f4aa701ea67bd39e86185f8
 bin/gps.cer:vendor/bin/gps.cer
 lib/hw/gps.default.so:vendor/lib/hw/gps.universal5433.so
+lib/hw/flp.default.so:vendor/lib/hw/flp.default.so
 lib/libwrappergps.so:vendor/lib/libwrappergps.so
 
 # NFC
