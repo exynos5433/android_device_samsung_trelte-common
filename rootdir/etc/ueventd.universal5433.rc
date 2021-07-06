@@ -1,4 +1,4 @@
-
+/dev/alarm                0664   system     radio
 # Video nodes
 /dev/mali0                0666   system     system
 /dev/ion                  0666   system     system
