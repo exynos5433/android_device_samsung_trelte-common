@@ -171,6 +171,9 @@ etc/firmware/florida-dsp4-rx-anc-wb.wmfw
 vendor/firmware/seiren_fw_dram.bin
 vendor/firmware/seiren_fw_sram.bin
 
+# Audio
+lib/libaudioroute.so|46fcafe8de5c4fe078ad9e9e613bc260fd137106
+
 # Sensors HAL
 lib/hw/sensors.universal5433.so:vendor/lib/sensors.vendor.tre.so
 
