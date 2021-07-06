@@ -61,10 +61,10 @@
 /dev/HPD                  0660   system     system
 
 # mfc
-/dev/video6               0660   mediacodec mediadrm
-/dev/video7               0660   media      mediadrm
-/dev/video8               0660   media      mediadrm
-/dev/video9               0660   media      mediadrm
+/dev/video6               0660   mediacodec drmrpc
+/dev/video7               0660   media      drmrpc
+/dev/video8               0660   media      drmrpc
+/dev/video9               0660   media      drmrpc
 
 # camera
 /dev/video100             0660   media      media
@@ -88,8 +88,8 @@
 /dev/media2               0660   media      media
 
 # hevc
-/dev/video10              0660   media      mediadrm
-/dev/video11              0660   media      mediadrm
+/dev/video10              0660   media      drmrpc
+/dev/video11              0660   media      drmrpc
 
 # jpeg
 /dev/m2m1shot_jpeg	  0660   media      media
@@ -343,7 +343,7 @@
 /dev/mobicore-user        0666   radio     system
 
 # Secure MEM driver
-/dev/s5p-smem             0660   system     mediadrm
+/dev/s5p-smem             0660   system     drmrpc
 
 # sensorhub
 /dev/ssp_data_injection   0660   system     system
