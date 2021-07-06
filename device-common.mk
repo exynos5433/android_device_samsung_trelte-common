@@ -67,9 +67,6 @@ PRODUCT_PACKAGES += \
     camera.universal5433 \
     Snap
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
-
 # Codecs
 PRODUCT_PACKAGES += \
     libstagefrighthw \
