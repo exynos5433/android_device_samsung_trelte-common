@@ -42,7 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true \
     ro.hdmi.enable=true \
     ro.hdmi.mirror.enable=true \
-    wifi.direct.interface=p2p0
+    wifi.direct.interface=p2p-dev-wlan0
 
 # Define default initial receive window size in segments.
 PRODUCT_PROPERTY_OVERRIDES += \
