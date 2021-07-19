@@ -491,6 +491,9 @@ on late-fs
 # Permissions for gpio_keys
     chown radio system /sys/class/sec/sec_key/wakeup_keys
     write /sys/class/sec/sec_key/wakeup_keys 116,172
+	
+# GnssConfiguration doesn't actually look at gps.conf, just the debug file
+    mount none /vendor/etc/gps.conf /system/etc/gps_debug.conf bind
 
 # GPS
     chown root system /sys/class/sec/gps/GPS_PWR_EN/value
