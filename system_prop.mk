@@ -85,10 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=19
 
-# Keystore
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.keystore=mdfpp
-
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=0 \
