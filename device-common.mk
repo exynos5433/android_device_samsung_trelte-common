@@ -187,6 +187,12 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service \
     keystore.exynos5
+	
+# Mobicore
+PRODUCT_PACKAGES += \
+    mcDriverDaemon \
+    libMcClient \
+    libMcRegistry
 
 # Lights
 PRODUCT_PACKAGES += \
