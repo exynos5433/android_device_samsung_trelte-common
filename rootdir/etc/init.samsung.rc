@@ -728,50 +728,6 @@ on boot
     chown system system /sys/class/timed_output/vibrator/enable
     chown system system /sys/class/timed_output/vibrator/intensity
     chown system system /sys/class/timed_output/vibrator/multi_freq
-# Encryption
-on nonencrypted
-    class_start main
-    class_start late_start
-
-on property:vold.decrypt=trigger_default_encryption
-    start defaultcrypto
-
-on property:vold.decrypt=trigger_encryption
-    start surfaceflinger
-    start encrypt
-    
-on property:vold.decrypt=trigger_reset_main
-    class_reset main
-
-on property:vold.decrypt=trigger_load_persist_props
-    load_persist_props
-    start logd
-    start logd-reinit
-    start sysmon
-
-on property:vold.decrypt=trigger_post_fs_data
-    trigger post-fs-data
-
-on property:vold.decrypt=trigger_restart_min_framework
-    class_start main
-
-on property:vold.decrypt=trigger_restart_framework
-    class_start main
-    class_start late_start
-
-on property:vold.decrypt=trigger_shutdown_framework
-    class_reset late_start
-    class_reset main
-    
-service uncrypt /system/bin/uncrypt
-    class main
-    disabled
-    oneshot
-
-service pre-recovery /system/bin/uncrypt --reboot
-    class main
-    disabled
-    oneshot
 
 # MobiCore
 service mobicore /vendor/bin/mcDriverDaemon -r /vendor/app/FFFFFFFF000000000000000000000001.drbin -r /vendor/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin /vendor/app/mcRegistry/app/mcRegistry/ffffffffd00000000000000000000016.tlbin
