@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += \
 # Codecs
 PRODUCT_PACKAGES += \
     libstagefrighthw \
-    libExynosOMX_Core
+    libion_exynos
 
 # Configstore
 PRODUCT_PACKAGES += \
