@@ -27,7 +27,7 @@ lib/libaptX_encoder.so:vendor/lib/libaptX_encoder.so|984739a0bc968e18f75ced20573
 
 # Camera
 lib/hw/camera.universal5433.so:vendor/lib/hw/camera.vendor.universal5433.so
-lib/libexynoscamera.so:vendor/lib/libexynoscamera.so
+lib/libexynoscamera.so:vendor/lib/libexynoscamera.so|40146e2e91a82372b0c9812962ce5d8f0316b60a
 lib/libvdis.so:vendor/lib/libvdis.so
 lib/libhwjpeg.so:vendor/lib/libhwjpeg.so
 vendor/firmware/setfile_6d1.bin
