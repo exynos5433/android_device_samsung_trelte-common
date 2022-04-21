@@ -37,18 +37,16 @@ vendor/firmware/setfile_imx240.bin
 vendor/lib/egl/libGLES_mali.so|603f324292c9117945f8e3139c07a769e0361c81
 vendor/lib/egl/libGLES_mali.so:vendor/lib/hw/vulkan.exynos5.so|603f324292c9117945f8e3139c07a769e0361c81
 
-# OMX - from A600F - A600FNXXU9CUH1
-vendor/lib/libExynosOMX_Core.so|7c1167261cb8c632d2aa19c161c636c358292783
-vendor/lib/libExynosOMX_Resourcemanager.so|0ba0bba5218e9fe84252b916b57e58b8af6339fb
-vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so|3d3bafa695b86b6e3f63e5e4a6c9a3af99a1800c
-vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so|cdfb4953de2d96e33d0d0e282128d5c8dd35b6b4
-vendor/lib/omx/libOMX.Exynos.HEVC.Decoder.so|9fd3ec84bd01d602a7d75f1518b9d40e630ac6b9
-vendor/lib/omx/libOMX.Exynos.HEVC.Encoder.so|0afaeea964c894db9a33edbc9178cb3508edd555
-vendor/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|6809df6bab09d9164412978a134dc5a6ec14f696
-vendor/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|08ccf6037d04af43d1c5f23bf83291fb0c6ae0bb
-vendor/lib/omx/libOMX.Exynos.VP8.Decoder.so|e556bbb5eac559c9659fe4aa851185ed60acaaed
-vendor/lib/omx/libOMX.Exynos.VP8.Encoder.so|18a162afd9b95ff6a022ba02e51bffe78843afea
-vendor/lib/omx/libOMX.Exynos.WMV.Decoder.so|2228c98f6e23fa1e017462fa2e076908b3ae10c4
+# OMX - from A600F - N935FXXS7CTJ2
+vendor/lib/libExynosOMX_Core.so|53d08da035d42cd140b162b62be88abdab59e1c5
+vendor/lib/libExynosOMX_Resourcemanager.so|ef641e05361fae4c4fc9c0024fb5f4316302921d
+vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so|d8b0422d65b264786295f7f76036fb39eea37349
+vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so|a12924a660a0e9e931fbc9ea575c49311d15ce22
+vendor/lib/omx/libOMX.Exynos.HEVC.Decoder.so|c8d73a46af84646dca9820610b033cf62c7b7484
+vendor/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|40a436eec98f6f798c1dd6f27605bc13c08e8a75
+vendor/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|f5267ad28c6af9b59c0bd4676fc98f8a9f753e62
+vendor/lib/omx/libOMX.Exynos.VP8.Decoder.so|cb095f3c7556566134848b9d98d219c5c8a1e6f0
+vendor/lib/omx/libOMX.Exynos.WMV.Decoder.so|8ca45413c98c47711c4c35c0c568f934a6c4c6b0
 
 # NXP Noise supppression
 vendor/lib/liblvverx_3.25.00.so:vendor/lib/soundfx/liblvverx.so|575865ce767dd1ab576118ba47254799757a2a1b
