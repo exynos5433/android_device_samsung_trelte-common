@@ -27,15 +27,26 @@ lib/libaptX_encoder.so:vendor/lib/libaptX_encoder.so|984739a0bc968e18f75ced20573
 
 # Camera
 lib/hw/camera.universal5433.so:vendor/lib/hw/camera.vendor.universal5433.so
-lib/libexynoscamera.so:vendor/lib/libexynoscamera.so
+lib/libexynoscamera.so:vendor/lib/libexynoscamera.so|40146e2e91a82372b0c9812962ce5d8f0316b60a
 lib/libvdis.so:vendor/lib/libvdis.so
 lib/libhwjpeg.so:vendor/lib/libhwjpeg.so
 vendor/firmware/setfile_6d1.bin
 vendor/firmware/setfile_imx240.bin
 
-# Graphics - from A800J/SCV32 - SCV32KDU1CQK3
-vendor/lib/egl/libGLES_mali.so|fe15d2d8a0060022650631cf4e481c377241b6e7
-vendor/lib/egl/libGLES_mali.so:vendor/lib/hw/vulkan.exynos5.so|fe15d2d8a0060022650631cf4e481c377241b6e7
+# Graphics - from A810F - A810FXXS2CTJ2
+vendor/lib/egl/libGLES_mali.so|603f324292c9117945f8e3139c07a769e0361c81
+vendor/lib/egl/libGLES_mali.so:vendor/lib/hw/vulkan.exynos5.so|603f324292c9117945f8e3139c07a769e0361c81
+
+# OMX - from A600F - N935FXXS7CTJ2
+vendor/lib/libExynosOMX_Core.so|53d08da035d42cd140b162b62be88abdab59e1c5
+vendor/lib/libExynosOMX_Resourcemanager.so|ef641e05361fae4c4fc9c0024fb5f4316302921d
+vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so|d8b0422d65b264786295f7f76036fb39eea37349
+vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so|a12924a660a0e9e931fbc9ea575c49311d15ce22
+vendor/lib/omx/libOMX.Exynos.HEVC.Decoder.so|c8d73a46af84646dca9820610b033cf62c7b7484
+vendor/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|40a436eec98f6f798c1dd6f27605bc13c08e8a75
+vendor/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|f5267ad28c6af9b59c0bd4676fc98f8a9f753e62
+vendor/lib/omx/libOMX.Exynos.VP8.Decoder.so|cb095f3c7556566134848b9d98d219c5c8a1e6f0
+vendor/lib/omx/libOMX.Exynos.WMV.Decoder.so|8ca45413c98c47711c4c35c0c568f934a6c4c6b0
 
 # NXP Noise supppression
 vendor/lib/liblvverx_3.25.00.so:vendor/lib/soundfx/liblvverx.so|575865ce767dd1ab576118ba47254799757a2a1b
