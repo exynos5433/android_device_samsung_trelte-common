@@ -1,4 +1,4 @@
-Device configuration for the Samsung Galaxy Note 4 family
+Releases for Samsung Galaxy Note 4 family
 
 ## Copyright
 * Copyright (C) 2015-2017 Christopher N. Hesse <raymanfx@gmail.com>
@@ -9,9 +9,24 @@ Apache License 2.0 (Apache-2.0) (Located at LICENSE, read more at [tldrlegal.com
 
 ------------------------------------------------------------------
 
+# Device Guide 
+
+**Head over to our Wiki [Device Guide](https://sourceforge.net/p/galaxy-note-4-exynos/wiki/Universal5433/)**
+
+# Releases Notes
+
+**Full Changelog History [XDA Developers](https://forum.xda-developers.com/t/exynos-unofficial-lineageos-17-1-04-21-2022.3937956/post-79692800)**
+
+# Downloads
+**Downloads are hosted at [SourceForge](https://sourceforge.net/projects/galaxy-note-4-exynos/files/)**
+
+# Threads
+
+**[LineageOS-17.1](https://forum.xda-developers.com/t/exynos-unofficial-lineageos-17-1-06-30-2021.3937956/) | [RessurectionRemix](https://forum.xda-developers.com/t/exynos-unofficial-resurrection-remix-q-v8-7-0-06-30-2021.3981537/unread) | [TWRP Recovery](https://forum.xda-developers.com/t/exynos-unofficial-twrp-3-5-2_9-galaxy-note-4-custom-recovery-07-28-2021.4311777/)**
+
 # Universal5433 - BUG Reports Guide
 
-**Bug reporting repo for [LineageOS-17.1](https://forum.xda-developers.com/t/exynos-unofficial-lineageos-17-1-06-30-2021.3937956/) | [RessurectionRemix](https://forum.xda-developers.com/t/exynos-unofficial-resurrection-remix-q-v8-7-0-06-30-2021.3981537/unread)**
+**Bug reporting for [LineageOS-17.1](https://forum.xda-developers.com/t/exynos-unofficial-lineageos-17-1-06-30-2021.3937956/) | [RessurectionRemix](https://forum.xda-developers.com/t/exynos-unofficial-resurrection-remix-q-v8-7-0-06-30-2021.3981537/unread)**
 
 ![alt text](https://cdn.arstechnica.net/wp-content/uploads/2021/04/Lineage-OS.jpg)
 
