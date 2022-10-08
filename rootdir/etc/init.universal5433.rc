@@ -6,6 +6,11 @@ import /system/vendor/etc/init/hw/init.power.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug
+	
+    # ZRAM setup
+    write /sys/block/zram0/comp_algorithm lz4
+    write /proc/sys/vm/page-cluster 0
+    write /sys/block/zram0/max_comp_streams 8
 
 on init
 
@@ -143,9 +148,6 @@ on boot
 
 # MSP FactoryApp
     mkdir /efs/FactoryApp 0775 system system
-
-    # SSWAP
-    write /proc/sys/vm/swappiness 160
 
     # For kernel lock in BT/WiFi race condtion
     chmod 0600 /dev/btlock
@@ -393,6 +395,11 @@ on boot
 on fs
     mount_all /vendor/etc/fstab.universal5433
     setprop ro.crypto.fuse_sdcard true
+	
+    swapon_all /vendor/etc/fstab.universal5433
+
+    # SSWAP
+    write /proc/sys/vm/swappiness 100
 
     # Start HW service manager early
     start hwservicemanager
@@ -747,12 +754,6 @@ on property:ro.debuggable=1
 on property:sys.boot_completed=1
     write /proc/sys/vm/dirty_bytes 31457280
     write /proc/sys/vm/dirty_background_bytes 15728640
-	
-    # ZRAM setup
-    write /sys/block/zram0/comp_algorithm lz4
-    write /proc/sys/vm/page-cluster 0
-    write /sys/block/zram0/max_comp_streams 8
-    swapon_all /vendor/etc/fstab.universal5433
 
 # on userdebug and eng builds, enable kgdb on the serial console
 on property:ro.debuggable=1
