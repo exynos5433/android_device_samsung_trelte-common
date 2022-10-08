@@ -149,7 +149,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service \
-    libhwbinder
+    libhwbinder \
+    vndservicemanager
 
 # LPM
 PRODUCT_PACKAGES += \
