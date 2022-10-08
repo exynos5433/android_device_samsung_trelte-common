@@ -72,11 +72,6 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libion_exynos
 
-# Configstore
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-impl \
-    android.hardware.configstore@1.1-service
-
 # Display
 #PRODUCT_PACKAGES += \
 #   AdvancedDisplay
