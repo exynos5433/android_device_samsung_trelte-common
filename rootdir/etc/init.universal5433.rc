@@ -832,12 +832,6 @@ on property:vold.decrypt=trigger_restart_framework
 on property:vold.decrypt=trigger_restart_min_framework
     start vendor.gnss_service
 
-service swapon /sbin/sswap -s -f 1536
-    class core
-    user root
-    group root
-    oneshot
-
 # ARGOSD
 service argos-daemon /vendor/bin/argosd
     class main

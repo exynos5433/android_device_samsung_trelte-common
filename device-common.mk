@@ -294,8 +294,7 @@ PRODUCT_PACKAGES += \
     init.universal5433.usb.rc \
     init.samsung.rc \
     init.wifi.rc \
-    ueventd.universal5433.rc \
-    sswap
+    ueventd.universal5433.rc
 
 # RCS
 PRODUCT_PACKAGES += \
