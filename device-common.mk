@@ -104,7 +104,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/validityservice/etc/permissions/privapp-permissions-validityservice.xml:system/etc/permissions/privapp-permissions-validityservice.xml
 
 # Flat device tree for boot image
-RODUCT_HOST_PACKAGES += \
+PRODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
 # FastCharge
