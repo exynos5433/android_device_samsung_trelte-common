@@ -171,7 +171,7 @@ endif
 BOARD_HDMI_INCAPABLE := true
 
 # Hidl
-DEVICE_MANIFEST_FILE := device/samsung/trelte-common/manifest.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 # HWCServices
@@ -255,7 +255,7 @@ BOARD_USE_ALP_AUDIO := true
 BOARD_USE_SEIREN_AUDIO := true
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += device/samsung/trelte-common/sepolicy
+#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Sensors
