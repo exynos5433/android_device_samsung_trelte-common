@@ -172,6 +172,7 @@ BOARD_HDMI_INCAPABLE := true
 
 # Hidl
 DEVICE_MANIFEST_FILE := device/samsung/trelte-common/manifest.xml
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 # HWCServices
 #BOARD_USES_HWC_SERVICES := true
