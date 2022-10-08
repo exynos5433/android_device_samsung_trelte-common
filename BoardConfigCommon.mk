@@ -190,6 +190,9 @@ IR_HAL_SUFFIX := exynos5
 # Lights
 TARGET_PROVIDES_LIBLIGHT := false
 
+# Enable memfd - needed otherwise you get crashes like Jit thread pool  >>> system_server <<<
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Samsung OpenMAX Video
 BOARD_USE_STOREMETADATA := true
 BOARD_USE_METADATABUFFERTYPE := true
