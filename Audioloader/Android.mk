@@ -23,7 +23,8 @@ LOCAL_SRC_FILES:= Audioloader.cpp
 
 LOCAL_SHARED_LIBRARIES := \
     libmedia \
-    libaudioclient
+    libaudioclient \
+    libmediametrics
 
 LOCAL_MODULE:= Audioloader
 LOCAL_MODULE_TAGS:= optional
