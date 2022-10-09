@@ -85,8 +85,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
 
 # LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.samsung-exynos
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay@2.0-service.samsung-exynos
 
 # DRM
 PRODUCT_PACKAGES += \
