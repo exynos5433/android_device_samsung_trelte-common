@@ -134,8 +134,8 @@ lib/liboemcrypto.so:vendor/lib/liboemcrypto.so
 # Widevine - from N935FXXS7CTJ2
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine|2721d7cbd6730d76d08cfd6d32c1bbaca715fb93
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|6d73a2063f155dcbd5ba95ca2d85e184cda61127
-vendor/lib/libwvhidl.so|fe6c10197d4b947bbb5431700bc79e937234f5e6
-vendor/lib/mediadrm/libwvdrmengine.so|ea269c91c0089c4f9a53a248eacf3adbd5717dfd
+vendor/lib/libwvhidl.so|52455097d5a0b33eeea2232a36c18ea2fddb2ced
+vendor/lib/mediadrm/libwvdrmengine.so|516d13cbd2a64fbcb476cfc02e70fbe82bc36040
 
 # HEVC for v4l2
 vendor/firmware/hevc_fw.bin
