@@ -1,5 +1,27 @@
+#
+# Copyright (C) 2022 The LineageOS Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-PRODUCT_CHARACTERISTICS := phonemedia
+LOCAL_PATH := device/samsung/trelte-common
+
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
 
 # Common inherits
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
@@ -9,7 +31,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
     $(LOCAL_PATH)/configs/telephony/spn-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/spn-conf.xml
-
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -59,8 +80,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl-legacy \
     camera.device@1.0-impl-legacy \
-    libexynoscamera_shim \
-	libstagefright_shim \
     camera.universal5433 \
     Snap
 
@@ -98,7 +117,7 @@ PRODUCT_PACKAGES += \
     ValidityService
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/validityservice/etc/permissions/privapp-permissions-validityservice.xml:system/etc/permissions/privapp-permissions-validityservice.xml
+    $(LOCAL_PATH)/validityservice/etc/permissions/privapp-permissions-validityservice.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-validityservice.xml
 
 # Flat device tree for boot image
 PRODUCT_HOST_PACKAGES += \
@@ -125,19 +144,22 @@ PRODUCT_PACKAGES += \
 # Gps
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl.universal5433 \
-    android.hardware.gnss@1.0-service.universal5433 \
-    libshim_gpsd
+    android.hardware.gnss@1.0-service.universal5433
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
     $(LOCAL_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml
 
 # Graphics
-PRODUCT_AAPT_CONFIG := xlarge
-PRODUCT_AAPT_PREF_CONFIG := 560dpi
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := large
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+# A list of dpis to select prebuilt apk, in precedence order.
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 # Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
@@ -171,7 +193,7 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     consumerir.universal5433
 
-# Keylayouts
+# Key-layout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchkey.kl \
     $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl \
@@ -236,19 +258,11 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     memtrack.exynos5
 
-# MobiCore
-#PRODUCT_PACKAGES += \
-#   mcDriverDaemon
-
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
     libandroid_net \
     netutils-wrapper-1.0
-
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -298,6 +312,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/com.samsung.permission.HRM_EXT.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.HRM_EXT.xml \
     $(LOCAL_PATH)/configs/permissions/com.samsung.permission.SSENSOR.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.SSENSOR.xml \
     $(LOCAL_PATH)/configs/permissions/com.sec.feature.spo2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.sec.feature.spo2.xml
+
 # Trust HALTARGET_COPY_OUT_VENDOR
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
@@ -329,10 +344,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
-# RRO
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
-
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
@@ -350,25 +361,21 @@ PRODUCT_COPY_FILES += \
 	
 # Shims
 PRODUCT_PACKAGES += \
-    libcutils_shim
-	
+    libcutils_shim \
+    libexynoscamera_shim \
+	libstagefright_shim \
+    libshim_gpsd
+
 # VNDK prebuilts
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so
 
 # Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
-
-# Tinyalsa utilities
-PRODUCT_PACKAGES += \
-    tinyplay \
-    tinycap \
-    tinymix \
-    tinypcminfo
 
 # USB HAL
 PRODUCT_PACKAGES += \
@@ -402,6 +409,3 @@ $(call inherit-product, hardware/samsung_slsi/exynos5433/exynos5433.mk)
 # Vendor
 $(call inherit-product, vendor/samsung/trelte-common/trelte-common-vendor.mk)
 
-# call Samsung LSI board support package
-#$(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
-#$(call inherit-product, hardware/samsung_slsi-cm/exynos5433/exynos5433.mk)
