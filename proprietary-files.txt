@@ -259,16 +259,22 @@ lib/libfloatingfeature.so:vendor/lib/libfloatingfeature.so
 # Reactivation Lock
 bin/reactived
 
-# LPM - Stock Charging Animation
-bin/lpm:vendor/bin/lpm|d2f7e9e5911d7c797ae33b9b0d5a5e0c3a5fbf9e
-lib/libmaet.so
-lib/libsxqk_skia.so
-media/battery_cover.spi:vendor/media/battery_cover.spi
-media/battery_error.spi:vendor/media/battery_error.spi
-media/battery_low.spi:vendor/media/battery_low.spi
-media/battery_temperature_error.spi:vendor/media/battery_temperature_error.spi
-media/battery_temperature_limit.spi:vendor/media/battery_temperature_limit.spi
-media/dock_error.spi:vendor/media/dock_error.spi
-media/incompatible_charger.spi:vendor/media/incompatible_charger.spi
-media/lcd_density.txt:vendor/media/lcd_density.txt
-media/percentage.spi:vendor/media/percentage.spi
+# LPM - Samsung Charger - A022FXXU2BUK2
+bin/lpm:vendor/bin/lpm|98faea7f8c9c140b2eb54f0a449c2e1432e563e0
+lib/libmaet.so:vendor/lib/libmaet.so|b58e4b586633f0343979cec3c715afce4c64ce45
+lib/libsxqk_skia.so:vendor/lib/libsxqk_skia.so|caffa53844221238c56cb923d171d0871e23aa4b
+media/battery_error.spi:vendor/media/battery_error.spi|7928f8273356284297fac0d32f3da0a5b5ae8ebd
+media/battery_low.spi:vendor/media/battery_low.spi|faafcef5fdc17b1ca8938fab5d611204aa179ef9
+media/battery_temperature_error.spi:vendor/media/battery_temperature_error.spi|5f88ca5fde9c5671309fcb9e5140905c439c9058
+media/battery_temperature_limit.spi:vendor/media/battery_temperature_limit.spi|bbe0a6c2898bd90b137623b90bc5dff37a25c333
+media/battery_water_usb.spi:vendor/media/battery_water_usb.spi|ed33b517bdd34567637992871e5527aa9af722ad
+media/charging_New_Fast.spi:vendor/media/charging_New_Fast.spi|f7b4864552cdfc829122548e153658a2a9580402
+media/charging_New_Normal.spi:vendor/media/charging_New_Normal.spi|36fe761354e9fc7c6b6aadd50051fe4bf84962e6
+media/dock_error_usb.spi:vendor/media/dock_error_usb.spi|a254ecf207515239d360c3940622a539d92d01a4
+media/incomplete_connect.spi:vendor/media/incomplete_connect.spi|d2ef276800c3ecff1723b4a12ae31d4c6592bed9
+media/lcd_density.txt:vendor/media/lcd_density.txt|3353c26d9c5d0438dbea7af7fb03119e07549cbd
+media/percentage.spi:vendor/media/percentage.spi|7d53ed9ac18fca6493530480069ff62d61eec5f7
+media/safety_timer_usb.spi:vendor/media/safety_timer_usb.spi|cabefe573c742ce1e2099143dcca2272909539c3
+media/slow_charging_usb.spi:vendor/media/slow_charging_usb.spi|a9583b385f1eefd6c823b0867c6487fad9588deb
+media/temperature_limit_usb.spi:vendor/media/temperature_limit_usb.spi|7f24cb9f1ad001f2c9cc86fffa529c410c690b25
+media/water_protection_usb.spi:vendor/media/water_protection_usb.spiece474bb245bd2e49c9fb3981ba7429e90084e27
