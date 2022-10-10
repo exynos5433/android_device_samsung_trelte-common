@@ -2,7 +2,7 @@
 PRODUCT_CHARACTERISTICS := phonemedia
 
 # Inherit products
--include $(LOCAL_PATH)/product/*.mk
+include $(LOCAL_PATH)/product/*.mk
 
 # Common inherits
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
@@ -374,9 +374,6 @@ PRODUCT_COPY_FILES += \
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2017-08-01
-
-# Properties
--include $(LOCAL_PATH)/system_prop.mk
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)

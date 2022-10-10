@@ -1,0 +1,42 @@
+# Audio
+audio.hw_burst_min_usec=2000
+af.fast_track_multiplier=1
+ro.vendor.audio_hal.force_voice_config=wide
+
+# Wifi / WiFi Display / Miracast
+wifi.interface=wlan0
+wlan.wfd.hdcp=disable
+net.tethering.noprovisioning=true
+ro.hdmi.enable=true
+ro.hdmi.mirror.enable=true
+wifi.direct.interface=p2p-dev-wlan0
+
+# Graphics
+ro.opengles.version=196610
+ro.hardware.egl=mali
+ro.hardware.vulkan=mali
+
+# Enable ADB Debugging By Default & Disable USB Debugging Popup
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=mtp,adb
+
+# ADB Insecure
+ro.secure=0
+ro.adb.secure=0
+ro.debuggable=1
+
+# USB
+sys.usb.ffs.aio_compat=1
+#persist.sys.usb.config=mtp
+
+# First API Level
+ro.product.first_api_level=19
+
+# SLSI
+debug.slsi_platform=1
+
+# SoC
+ro.soc.manufacturer=Samsung
+ro.soc.model=Exynos 5433
+ 

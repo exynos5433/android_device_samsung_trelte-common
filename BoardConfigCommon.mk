@@ -84,6 +84,11 @@ TARGET_LINUX_KERNEL_VERSION := 3.10
 # Ant+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
+# Properties
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+TARGET_SYSTEM_PROP += device/samsung/trelte-common/system.prop
+TARGET_VENDOR_PROP += device/samsung/trelte-common/vendor.prop
+
 # Audio HAL variant
 TARGET_AUDIOHAL_VARIANT := universal5433
 
