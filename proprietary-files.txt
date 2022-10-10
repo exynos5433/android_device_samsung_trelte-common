@@ -213,9 +213,6 @@ lib/hw/gps.default.so:vendor/lib/hw/gps.universal5433.so
 lib/hw/flp.default.so:vendor/lib/hw/flp.default.so
 lib/libwrappergps.so:vendor/lib/libwrappergps.so
 
-# NFC
-lib/hw/nfc_nci.universal5433.so:vendor/lib/hw/nfc_nci.universal5433.so|300970563dc0f4f79426ce5adad43df190491867
-
 # Fingerprint
 bin/vcsFPService:vendor/bin/vcsFPService
 lib/libfpasmtztransport.so:vendor/lib/libfpasmtztransport.so
