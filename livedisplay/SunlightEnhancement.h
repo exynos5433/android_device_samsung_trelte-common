@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SUNLIGHTENHANCEMENT_H
-#define VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SUNLIGHTENHANCEMENT_H
+#ifndef VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SunlightEnhancement_H
+#define VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SunlightEnhancement_H
 
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
@@ -44,8 +44,6 @@ class SunlightEnhancement : public ISunlightEnhancement {
     Return<bool> setEnabled(bool enabled) override;
 
     // Methods from ::android::hidl::base::V1_0::IBase follow.
-  private:
-    bool mHasHBM = false;
 };
 
 }  // namespace samsung
@@ -54,4 +52,4 @@ class SunlightEnhancement : public ISunlightEnhancement {
 }  // namespace lineage
 }  // namespace vendor
 
-#endif  // VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SUNLIGHTENHANCEMENT_H
+#endif  // VENDOR_LINEAGE_LIVEDISPLAY_V2_0_SunlightEnhancement_H
