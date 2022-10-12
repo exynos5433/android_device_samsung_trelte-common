@@ -22,6 +22,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
+
 # Common inherits
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -174,9 +175,7 @@ PRODUCT_PACKAGES += \
 # Healthd
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service \
-    libhwbinder \
-    vndservicemanager
+    android.hardware.health@2.0-service
 
 # LPM
 PRODUCT_PACKAGES += \
@@ -185,7 +184,12 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0
+    android.hidl.manager@1.0 \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor \
+    vndservicemanager
 
 # IR
 PRODUCT_PACKAGES += \
