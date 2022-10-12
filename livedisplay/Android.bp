@@ -55,15 +55,15 @@ cc_defaults {
 }
 
 cc_binary {
-    name: "lineage.livedisplay@2.0-service.samsung-exynos",
-    init_rc: ["lineage.livedisplay@2.0-service.samsung-exynos.rc"],
+    name: "lineage.livedisplay@2.0-service.samsung-universal5433",
+    init_rc: ["lineage.livedisplay@2.0-service.samsung-universal5433.rc"],
     defaults: ["livedisplay_samsung_exynos_defaults"],
     cflags: ["-DLIVES_IN_SYSTEM"],
 }
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service.samsung-exynos",
-    init_rc: ["vendor.lineage.livedisplay@2.0-service.samsung-exynos.rc"],
+    name: "vendor.lineage.livedisplay@2.0-service.samsung-universal5433",
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.samsung-universal5433.rc"],
     defaults: ["livedisplay_samsung_exynos_defaults"],
     vendor: true,
 }
