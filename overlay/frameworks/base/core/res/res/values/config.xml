@@ -309,6 +309,10 @@
     <!-- MMS user agent string -->
     <string name="config_mms_user_agent" translatable="false">note4</string>
 
+    <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
+         manually by the user. -->
+    <bool name="config_enableHapticTextHandle">true</bool>
+
     <!-- Doze (Ambient display) -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
