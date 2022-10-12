@@ -65,12 +65,12 @@
             <Limit name="measured-frame-rate-1280x720" range="270-270" />
             <Limit name="measured-frame-rate-1920x1080" range="120-120" />
         </MediaCodec>
-        <MediaCodec name="OMX.Exynos.hevc.dec" type="video/hevc" update="true" >
+        <!--MediaCodec name="OMX.Exynos.hevc.dec" type="video/hevc" update="true" >
             <Limit name="measured-frame-rate-320x240" range="611-631" />
             <Limit name="measured-frame-rate-720x480" range="765-765" />
             <Limit name="measured-frame-rate-1280x720" range="270-270" />
             <Limit name="measured-frame-rate-1920x1080" range="120-120" />
-        </MediaCodec>
+        </MediaCodec-->
         <MediaCodec name="OMX.Exynos.vp8.dec" type="video/x-vnd.on2.vp8" update="true" >
             <Limit name="measured-frame-rate-320x240" range="620-648" />
             <Limit name="measured-frame-rate-720x480" range="720-720" />
