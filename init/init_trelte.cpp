@@ -60,6 +60,7 @@ std::vector<std::string> ro_product_props_default_source_order = {
     "odm.",
     "vendor.",
     "system.",
+    "system_ext.",
 };
 
 /* From Magisk@jni/magiskhide/hide_utils.c */
