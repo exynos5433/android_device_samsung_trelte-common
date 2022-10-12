@@ -12,6 +12,12 @@ on init
     chmod 0660 /sys/class/mdnie/mdnie/sensorRGB
     chown system system /sys/class/mdnie/mdnie/lux
     chmod 0660 /sys/class/mdnie/mdnie/lux
+    chown system system /sys/class/mdnie/mdnie/lux
+    chmod 0660 /sys/class/mdnie/mdnie/lux
+
+    # LCD
+    chown system system /sys/class/lcd/panel/power_reduce
+    chmod 0660 /sys/class/lcd/panel/power_reduce
 
 on post-fs-data
     mkdir /data/vendor/display 0770 system system
