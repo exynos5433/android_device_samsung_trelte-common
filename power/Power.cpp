@@ -246,6 +246,10 @@ void Power::setProfile(PowerProfile profile) {
                 set(cpuInteractivePaths.at(1) + "/go_hispeed_load", INTERACTIVE_LOW_B_GO_HISPEED_LOAD);
                 set(cpuInteractivePaths.at(1) + "/target_loads", INTERACTIVE_LOW_B_TARGET_LOADS);
                 set(cpuInteractivePaths.at(1) + "/above_hispeed_delay", INTERACTIVE_LOW_B_ABOVE_HISPEED_DELAY);
+                set(cpuInteractivePaths.at(1) + "/single_enter_load", INTERACTIVE_LOW_B_SINGLE_ENTER_LOAD);
+                set(cpuInteractivePaths.at(1) + "/multi_enter_time", INTERACTIVE_LOW_B_MULTI_ENTER_TIME);
+                set(cpuInteractivePaths.at(1) + "/multi_exit_time", INTERACTIVE_LOW_B_MULTI_EXIT_TIME);
+
 				/* Limit CPU MAX FREQ to custom values */
                 set(cpuSysfsPaths.at(0) + "/cpufreq/scaling_max_freq", PSAVE_LITTLE);
                 set(cpuSysfsPaths.at(1) + "/cpufreq/scaling_max_freq", PSAVE_BIG);
@@ -260,6 +264,9 @@ void Power::setProfile(PowerProfile profile) {
                 set(cpuInteractivePaths.at(1) + "/go_hispeed_load", INTERACTIVE_DEF_B_GO_HISPEED_LOAD);
                 set(cpuInteractivePaths.at(1) + "/target_loads", INTERACTIVE_DEF_B_TARGET_LOADS);
                 set(cpuInteractivePaths.at(1) + "/above_hispeed_delay", INTERACTIVE_DEF_B_ABOVE_HISPEED_DELAY);
+                set(cpuInteractivePaths.at(1) + "/single_enter_load", INTERACTIVE_DEF_B_SINGLE_ENTER_LOAD);
+                set(cpuInteractivePaths.at(1) + "/multi_enter_time", INTERACTIVE_DEF_B_MULTI_ENTER_TIME);
+                set(cpuInteractivePaths.at(1) + "/multi_exit_time", INTERACTIVE_DEF_B_MULTI_EXIT_TIME);
 				/* set CPU MAX FREQ back to expected freq */
                 set(cpuSysfsPaths.at(0) + "/cpufreq/scaling_max_freq", LITTLE);
                 set(cpuSysfsPaths.at(1) + "/cpufreq/scaling_max_freq", BIG);
@@ -274,6 +281,9 @@ void Power::setProfile(PowerProfile profile) {
                 set(cpuInteractivePaths.at(1) + "/go_hispeed_load", INTERACTIVE_HIGH_B_GO_HISPEED_LOAD);
                 set(cpuInteractivePaths.at(1) + "/target_loads", INTERACTIVE_HIGH_B_TARGET_LOADS);
                 set(cpuInteractivePaths.at(1) + "/above_hispeed_delay", INTERACTIVE_HIGH_B_ABOVE_HISPEED_DELAY);
+                set(cpuInteractivePaths.at(1) + "/single_enter_load", INTERACTIVE_HIGH_B_SINGLE_ENTER_LOAD);
+                set(cpuInteractivePaths.at(1) + "/multi_enter_time", INTERACTIVE_HIGH_B_MULTI_ENTER_TIME);
+                set(cpuInteractivePaths.at(1) + "/multi_exit_time", INTERACTIVE_HIGH_B_MULTI_EXIT_TIME);
 				/* set CPU MAX FREQ to max*/
                 set(cpuSysfsPaths.at(0) + "/cpufreq/scaling_max_freq", HIGH_LITTLE);
                 set(cpuSysfsPaths.at(1) + "/cpufreq/scaling_max_freq", HIGH_BIG);
