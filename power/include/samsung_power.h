@@ -44,7 +44,7 @@ static const std::vector<std::string> cpuInteractivePaths = {
 #define PSAVE_BIG "1400000"
 #define LITTLE "1300000"
 #define BIG "1700000"
-#define HIGH_LITTLE "1400000"
+#define HIGH_LITTLE "1300000"
 #define HIGH_BIG "1900000"
 
 /* interactive default profile - trelte */
