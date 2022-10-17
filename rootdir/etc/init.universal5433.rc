@@ -128,6 +128,9 @@ on boot
 
     # Disable Hotplugging for little cluster
     write /sys/power/little_core_hotplug_in 1
+	
+    # Disable Hotplugging all together
+    write /sys/power/enable_dm_hotplug 0
 
     # Update cpusets now that processors are up
     write /dev/cpuset/foreground/cpus 0-7
