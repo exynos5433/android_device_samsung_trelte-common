@@ -92,10 +92,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #   AdvancedDisplay
 
-# SamsungDoze
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
 # APEX
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
