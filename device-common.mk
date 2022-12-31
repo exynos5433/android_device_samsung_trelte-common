@@ -130,10 +130,6 @@ PRODUCT_PACKAGES += \
 # First Model API LEVEL
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flp.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/flp.conf
 	
@@ -315,10 +311,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/com.samsung.permission.HRM_EXT.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.HRM_EXT.xml \
     $(LOCAL_PATH)/configs/permissions/com.samsung.permission.SSENSOR.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.SSENSOR.xml \
     $(LOCAL_PATH)/configs/permissions/com.sec.feature.spo2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.sec.feature.spo2.xml
-
-# Trust HALTARGET_COPY_OUT_VENDOR
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # Touch
 PRODUCT_PACKAGES += \
