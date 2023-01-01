@@ -28,14 +28,14 @@ fi
 
 echo " "
 echo "Patches: Applying NetworkStack: TcpSocketTracker: Opt-out for TCP info parsing on legacy kernels"
-patch -d packages/modules/NetworkStack -p1 -N < device/samsung/$DEVICE/patches/packages/modules/NetworkStack/0001-TcpSocketTracker-Opt-out-for-TCP-info-parsing-on-leg.patch
+patch -d packages/modules/NetworkStack -p1 -N --no-backup-if-mismatch --reject-file=/tmp/rej < device/samsung/$DEVICE/patches/packages/modules/NetworkStack/0001-TcpSocketTracker-Opt-out-for-TCP-info-parsing-on-leg.patch
 echo " "
 echo "Patches: Applying system: core: utils: Threads: Handle empty thread names"
-patch -d system/core -p1 -N < device/samsung/$DEVICE/patches/system/core/0001-utils-Threads-Handle-empty-thread-names.patch
+patch -d system/core -p1 -N --no-backup-if-mismatch --reject-file=/tmp/rej < device/samsung/$DEVICE/patches/system/core/0001-utils-Threads-Handle-empty-thread-names.patch
 echo " "
 if [ $BUILD_SPOOFING = "1" ]; then
 	echo "Patches: Applying frameworks: base: Add support for app signature spoofing"
-	patch -d frameworks/base -p1 -N < device/samsung/$DEVICE/patches/frameworks/base/0001-Add-support-for-app-signature-spoofing.patch
+	patch -d frameworks/base -p1 -N --no-backup-if-mismatch --reject-file=/tmp/rej < device/samsung/$DEVICE/patches/frameworks/base/0001-Add-support-for-app-signature-spoofing.patch
     echo " "
 else
 	echo "Patches: Skipping frameworks: base: Add support for app signature spoofing"
