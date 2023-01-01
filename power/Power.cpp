@@ -177,13 +177,13 @@ void Power::initialize() {
     set(cpuInteractivePaths.at(0) + "/timer_rate", INTERACTIVE_DEF_L_TIMER_RATE);
     set(cpuInteractivePaths.at(0) + "/timer_slack", INTERACTIVE_DEF_L_TIMER_SLACK);
     set(cpuInteractivePaths.at(0) + "/min_sample_time", INTERACTIVE_DEF_L_MIN_SAMPLE_TIME);
-    set(cpuInteractivePaths.at(0) + "/boostpulse_duration", INTERACTIVE_DEF_L_BOOTPULSE_DURATION);
+    set(cpuInteractivePaths.at(0) + "/boostpulse_duration", INTERACTIVE_DEF_L_BOOSTPULSE_DURATION);
     set(cpuInteractivePaths.at(0) + "/multi_enter_load", INTERACTIVE_DEF_L_MULTI_ENTER_LOAD);
     set(cpuInteractivePaths.at(0) + "/single_enter_load", INTERACTIVE_DEF_L_SINGLE_ENTER_LOAD);
     set(cpuInteractivePaths.at(1) + "/timer_rate", INTERACTIVE_DEF_B_TIMER_RATE);
     set(cpuInteractivePaths.at(1) + "/timer_slack", INTERACTIVE_DEF_B_TIMER_SLACK);
     set(cpuInteractivePaths.at(1) + "/min_sample_time", INTERACTIVE_DEF_B_MIN_SAMPLE_TIME);
-    set(cpuInteractivePaths.at(1) + "/boostpulse_duration", INTERACTIVE_DEF_B_BOOTPULSE_DURATION);
+    set(cpuInteractivePaths.at(1) + "/boostpulse_duration", INTERACTIVE_DEF_B_BOOSTPULSE_DURATION);
     set(cpuInteractivePaths.at(1) + "/single_enter_load", INTERACTIVE_DEF_B_SINGLE_ENTER_LOAD);
     set(cpuInteractivePaths.at(1) + "/single_enter_time", INTERACTIVE_DEF_B_SINGLE_ENTER_TIME);
     set(cpuInteractivePaths.at(1) + "/single_exit_load", INTERACTIVE_DEF_B_SINGLE_EXIT_LOAD);
