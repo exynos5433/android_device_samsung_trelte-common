@@ -43,17 +43,16 @@
 #include <android-base/properties.h>
 #include <android-base/strings.h>
 
-#include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
-using android::base::SetProperty;
+using std::string;
 
 // copied from build/tools/releasetools/ota_from_target_files.py
 // but with "." at the end and empty entry
-std::vector<std::string> ro_product_props_default_source_order = {
+std::vector<std::string> ro_props_default_source_order = {
     "",
     "product.",
     "product_services.",
@@ -96,27 +95,38 @@ static const char *snet_prop_value[] = {
   NULL
 };
 
-void property_override(char const prop[], char const value[], bool add = true)
-{
-    auto pi = (prop_info *) __system_property_find(prop);
+void property_override(string prop, string value) {
+    auto pi = (prop_info*) __system_property_find(prop.c_str());
 
-    if (pi != nullptr) {
-        __system_property_update(pi, value, strlen(value));
-    } else if (add) {
-        __system_property_add(prop, strlen(prop), value, strlen(value));
+    if (pi != nullptr)
+        __system_property_update(pi, value.c_str(), value.size());
+    else
+        __system_property_add(prop.c_str(), prop.size(), value.c_str(), value.size());
+}
+
+void set_ro_build_prop(const string &prop, const string &value, bool product = true) {
+    string prop_name;
+
+    for (const auto &source : ro_props_default_source_order) {
+        if (product)
+            prop_name = "ro.product." + source + prop;
+        else
+            prop_name = "ro." + source + "build." + prop;
+
+        property_override(prop_name.c_str(), value.c_str());
     }
 }
 
 void lte_properties()
 {
-    SetProperty("telephony.lteOnGsmDevice", "1");
-    SetProperty("ro.telephony.default_network", "9");
+    property_override("telephony.lteOnGsmDevice", "1");
+    property_override("ro.telephony.default_network", "9");
 }
 
 void nonlte_properties()
 {
-    SetProperty("telephony.lteOnGsmDevice", "0");
-    SetProperty("ro.telephony.default_network", "3");
+    property_override("telephony.lteOnGsmDevice", "0");
+    property_override("ro.telephony.default_network", "3");
 }
 
 static void workaround_snet_properties() {
@@ -130,151 +140,99 @@ static void workaround_snet_properties() {
   chmod("/sys/fs/selinux/policy", 0440);
 }
 
-void vendor_load_properties()
-{
-    std::string bootloader = GetProperty("ro.bootloader", "");
+void set_build_fingerprint(string name, string device, string build) {
+    string build_fingerprint;
+    string build_desc;
 
-    const auto set_ro_product_prop = [](const std::string &source,
-            const std::string &prop, const std::string &value) {
-        auto prop_name = "ro.product." + source + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
-    };
+    std::string bl = GetProperty("ro.bootloader","");
+    if(bl.empty()){
+        bl = GetProperty("ro.boot.bootloader", "");
+    }
+    
+    LOG(ERROR) << "Found bootloader id " << bl << " setting build properties for " << device << " device" << std::endl;
 
-    if (bootloader.find("N910C") == 0) {
-        /* treltexx */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DSA2:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N910C");
-            set_ro_product_prop(source, "device", "trelte");
-            set_ro_product_prop(source, "name", "treltexx");
-        }
-        property_override("ro.build.description", "treltexx-user 6.0.1 MMB29K N910CXXU2DSA2 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N910H") == 0) {
-        /* tre3gxx */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/tre3gxx/tre3g:6.0.1/MMB29K/N910HXXS2DSB2:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N910H");
-            set_ro_product_prop(source, "device", "tre3g");
-            set_ro_product_prop(source, "name", "tre3gxx");
-        }
-        property_override("ro.build.description", "tre3gxx-user 6.0.1 MMB29K N910HXXS2DSB2 release-keys");
-        nonlte_properties();
-    } else if (bootloader.find("N910U") == 0) {
-        /* trhpltexx */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/trhpltexx/trhplte:6.0.1/MMB29K/N910UXXU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N910U");
-            set_ro_product_prop(source, "device", "trhplte");
-            set_ro_product_prop(source, "name", "trhpltexx");
-        }
-        property_override("ro.build.description", "trhpltexx-user 6.0.1 MMB29K N910UXXU2DSA1 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N910S") == 0) {
-        /* trelteskt */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/trelteskt/trelteskt:6.0.1/MMB29K/N910SKSU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N910S");
-            set_ro_product_prop(source, "device", "trelteskt");
-            set_ro_product_prop(source, "name", "trelteskt");
-        }
-        property_override("ro.build.description", "trelteskt-user 6.0.1 MMB29K N910SKSU2DSA1 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N910L") == 0) {
-        /* treltelgt */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/treltelgt/treltelgt:6.0.1/MMB29K/N910LKLU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N910L");
-            set_ro_product_prop(source, "device", "treltelgt");
-            set_ro_product_prop(source, "name", "treltelgt");
-        }
-        property_override("ro.build.description", "treltelgt-user 6.0.1 MMB29K N910LKLU2DSA1 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N910K") == 0) {
-        /* treltektt */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/treltektt/treltektt:6.0.1/MMB29K/N910KKTU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N910K");
-            set_ro_product_prop(source, "device", "treltektt");
-            set_ro_product_prop(source, "name", "treltektt");
-        }
-        property_override("ro.build.description", "treltektt-user 6.0.1 MMB29K N910KKTU2DSA1 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N915S") == 0) {
-        /* tbelteskt */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/tbelteskt/tbelteskt:6.0.1/MMB29K/N915SKSU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N915S");
-            set_ro_product_prop(source, "device", "tbelteskt");
-            set_ro_product_prop(source, "name", "tbelteskt");
-        }
-        property_override("ro.build.description", "tbelteskt-user 6.0.1 MMB29K N915SKSU2DSA1 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N915L") == 0) {
-        /* tbeltelgt */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/tbeltelgt/tbeltelgt:6.0.1/MMB29K/N915LKLU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N915L");
-            set_ro_product_prop(source, "device", "tbeltelgt");
-            set_ro_product_prop(source, "name", "tbeltelgt");
-        }
-        property_override("ro.build.description", "tbeltelgt-user 6.0.1 MMB29K N915LKLU2DSA1 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N915K") == 0) {
-        /* tbeltektt */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/tbeltektt/tbeltektt:6.0.1/MMB29K/N915KKTU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N915K");
-            set_ro_product_prop(source, "device", "tbeltektt");
-            set_ro_product_prop(source, "name", "tbeltektt");
-        }
-        property_override("ro.build.description", "tbeltektt-user 6.0.1 MMB29K N915KKTU2DSA1 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N916S") == 0) {
-        /* tre3calteskt  */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/tre3calteskt /tre3calteskt :6.0.1/MMB29K/N916SKSU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N916S");
-            set_ro_product_prop(source, "device", "tre3calteskt ");
-            set_ro_product_prop(source, "name", "tre3calteskt ");
-        }
-        property_override("ro.build.description", "tre3calteskt -user 6.0.1 MMB29K N916SKSU2DSA1` release-keys");
-        lte_properties();
-    } else if (bootloader.find("N916L") == 0) {
-        /* tre3caltelgt */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/tre3caltelgt/tre3caltelgt:6.0.1/MMB29K/N916LKLU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N916L");
-            set_ro_product_prop(source, "device", "tre3caltelgt");
-            set_ro_product_prop(source, "name", "tre3caltelgt");
-        }
-        property_override("ro.build.description", "tre3caltelgt-user 6.0.1 MMB29K N916LKLU2DSA1 release-keys");
-        lte_properties();
-    } else if (bootloader.find("N916K") == 0) {
-        /* tre3caltektt */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/tre3caltektt/tre3caltektt:6.0.1/MMB29K/N916KKTU2DSA1:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N916K");
-            set_ro_product_prop(source, "device", "tre3caltektt");
-            set_ro_product_prop(source, "name", "tre3caltektt");
-        }
-        property_override("ro.build.description", "tre3caltektt-user 6.0.1 MMB29K N916KKTU2DSA1 release-keys");
-        lte_properties();
-    } else {
-        /* treltexx */
-        for (const auto &source : ro_product_props_default_source_order) {
-            set_ro_product_prop(source, "fingerprint", "samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DSA2:user/release-keys");
-            set_ro_product_prop(source, "model", "SM-N910C");
-            set_ro_product_prop(source, "device", "trelte");
-            set_ro_product_prop(source, "name", "treltexx");
-        }
-        property_override("ro.build.description", "treltexx-user 6.0.1 MMB29K N910CXXU2DSA2 release-keys");
-        lte_properties();
+    build_fingerprint = "samsung/" + name + "/" + device + ":6.0.1/MMB29K/" + build + ":user/release-keys";
+    build_desc = name + "-user 6.0.1 MMB29K " + build + " release-keys";
+
+    set_ro_build_prop("fingerprint", build_fingerprint, false);
+    set_ro_build_prop("description", build_desc, false);
+    property_override("ro.bootimage.build.fingerprint", build_fingerprint);
+    
+    set_ro_build_prop("name", name);
+    set_ro_build_prop("name", name, false);
+    set_ro_build_prop("device", device);
+    set_ro_build_prop("device", device, false);
+}
+
+void vendor_load_properties() {
+    string model;
+
+    std::string bootloader = GetProperty("ro.bootloader","");
+    if(bootloader.empty()){
+        bootloader = GetProperty("ro.boot.bootloader", "");
     }
 
-    std::string device = GetProperty("ro.product.device", "");
-    LOG(ERROR) << "Found bootloader id " << bootloader << " setting build properties for " << device << " device" << std::endl;
-	
+    /* name , device , build */
+    /* samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DSA2:user/release-keys */
+    /* treltexx-user 6.0.1 MMB29K N910CXXU2DSA2 release-keys*/
+    
+    if (bootloader.find("N910C") == 0) {
+        set_build_fingerprint("treltexx", "trelte", "N910CXXU2DSA2");
+        model = "N910C";
+    } else if (bootloader.find("N910H") == 0) {
+        set_build_fingerprint("tre3gxx", "tre3g", "N910HXXS2DSB2");
+        model = "N910H";
+    } else if (bootloader.find("N910U") == 0) {
+        set_build_fingerprint("trhpltexx", "trhplte", "N910UXXU2DSA1");
+        model = "N910U";
+    } else if (bootloader.find("N910S") == 0) {
+        set_build_fingerprint("trelteskt", "trelteskt", "N910SKSU2DSA1");
+        model = "N910S";
+    } else if (bootloader.find("N910L") == 0) {
+        set_build_fingerprint("treltelgt", "treltelgt", "N910LKLU2DSA1");
+        model = "N910L";
+    } else if (bootloader.find("N910K") == 0) {
+        set_build_fingerprint("treltektt", "treltektt", "N910KKTU2DSA1");
+        model = "N910K";
+    } else if (bootloader.find("N915S") == 0) {
+        set_build_fingerprint("tbelteskt", "tbelteskt", "N915SKSU2DSA1");
+        model = "N915S";
+    } else if (bootloader.find("N915L") == 0) {
+        set_build_fingerprint("tbeltelgt", "tbeltelgt", "N915LKLU2DSA1");
+        model = "N915L";
+    } else if (bootloader.find("N915K") == 0) {
+        set_build_fingerprint("tbeltektt", "tbeltektt", "N915KKTU2DSA1");
+        model = "N915K";
+    } else if (bootloader.find("N916S") == 0) {
+        set_build_fingerprint("tre3calteskt", "tre3calteskt", "N916SKSU2DSA1");
+        model = "N916S";
+    } else if (bootloader.find("N916L") == 0) {
+        set_build_fingerprint("tre3caltelgt", "tre3caltelgt", "N916LKLU2DSA1");
+        model = "N916L";
+    } else if (bootloader.find("N916K") == 0) {
+        set_build_fingerprint("tre3caltektt", "tre3caltektt", "N916KKTU2DSA1");
+        model = "N916K";
+    } else {
+        LOG(ERROR) << __func__ << ": Coudn't indentify model! Setting Default Model";
+        set_build_fingerprint("treltexx", "trelte", "N910CXXU2DSA2");
+        lte_properties();
+        model = "N910C";
+    }
+    
+    /* Only set 3G For N910H */
+    if (bootloader.find("N910H") == 0) {
+        nonlte_properties();
+        LOG(ERROR) << "Setting 3G Only as " << bootloader << " is detected." << std::endl;
+    } else {
+        lte_properties();
+        LOG(ERROR) << "Enabling 4G Support as " << bootloader << " is detected." << std::endl;
+    }
+    
+    set_ro_build_prop("model", model);
+    set_ro_build_prop("product", model, false);
+    
     // Workaround SafetyNet
     //workaround_snet_properties();
+
 }
+
