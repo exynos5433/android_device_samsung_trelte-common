@@ -786,19 +786,19 @@ static snd_device_t get_input_snd_device(struct audio_device *adev, audio_device
         }
     } else {
         if (out_device & AUDIO_DEVICE_OUT_EARPIECE) {
-            snd_device = SND_DEVICE_IN_EARPIECE_MIC;
+            snd_device = SND_DEVICE_IN_VOICE_EARPIECE_MIC;
         } else if (out_device & AUDIO_DEVICE_OUT_WIRED_HEADSET) {
             snd_device = SND_DEVICE_IN_HEADSET_MIC;
         } else if (out_device & AUDIO_DEVICE_OUT_SPEAKER) {
             snd_device = SND_DEVICE_IN_SPEAKER_MIC;
         } else if (out_device & AUDIO_DEVICE_OUT_WIRED_HEADPHONE) {
-            snd_device = SND_DEVICE_IN_EARPIECE_MIC;
+            snd_device = SND_DEVICE_IN_VOICE_EARPIECE_MIC;
         } else if (out_device & AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET) {
             snd_device = SND_DEVICE_IN_BT_SCO_MIC;
         } else {
             ALOGE("%s: Unknown output device(s) %#x", __func__, out_device);
-            ALOGW("%s: Using default earpiece-mic", __func__);
-            snd_device = SND_DEVICE_IN_EARPIECE_MIC;
+            ALOGW("%s: Using default voice-earpiece-mic", __func__);
+            snd_device = SND_DEVICE_IN_VOICE_EARPIECE_MIC;
         }
     }
 exit:
