@@ -33,6 +33,9 @@ echo " "
 echo "Patches: Applying system: core: utils: Threads: Handle empty thread names"
 patch -d system/core -p1 -N --no-backup-if-mismatch --reject-file=/tmp/rej < device/samsung/$DEVICE/patches/system/core/0001-utils-Threads-Handle-empty-thread-names.patch
 echo " "
+echo "Patches: Applying inputflinger: disable touch input while using a stylus"
+patch -d frameworks/native -p1 -N --no-backup-if-mismatch --reject-file=/tmp/rej < device/samsung/$DEVICE/patches/frameworks/native/0001-inputflinger-disable-touch-input-while-using-a-stylus.patch
+echo " "
 if [ $BUILD_SPOOFING = "1" ]; then
 	echo "Patches: Applying frameworks: base: Add support for app signature spoofing"
 	patch -d frameworks/base -p1 -N --no-backup-if-mismatch --reject-file=/tmp/rej < device/samsung/$DEVICE/patches/frameworks/base/0001-Add-support-for-app-signature-spoofing.patch
