@@ -292,16 +292,20 @@ void Power::setProfile(PowerProfile profile) {
 }
 
 void Power::sendBoostpulse() {
-    // the boostpulse node is only valid for the LITTLE cluster
-    set(cpuInteractivePaths.front() + "/boostpulse", "1");
+    // Trigger BoostPulse node on both clusters
+	set(cpuInteractivePaths.at(0) + "/boostpulse", "1");
+	set(cpuInteractivePaths.at(1) + "/boostpulse", "1");
 }
 
 void Power::sendBoost(int duration_us) {
-    set(cpuInteractivePaths.front() + "/boost", "1");
+    // Trigger Boost node on both clusters
+	set(cpuInteractivePaths.at(0) + "/boost", "1");
+	set(cpuInteractivePaths.at(1) + "/boost", "1");
 
     usleep(duration_us);
 
-    set(cpuInteractivePaths.front() + "/boost", "0");
+	set(cpuInteractivePaths.at(0) + "/boost", "0");
+	set(cpuInteractivePaths.at(1) + "/boost", "0");
 }
 
 }  // namespace implementation
