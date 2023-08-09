@@ -208,7 +208,7 @@ lib/libgnustl_shared.so:vendor/lib/libgnustl_shared.so
 lib/hw/consumerir.exynos5.so:vendor/lib/hw/consumerir.exynos5.so
 
 # GPS
-bin/gpsd:vendor/bin/gpsd|8921de4a04f99ab85f4aa701ea67bd39e86185f8
+bin/gpsd:vendor/bin/gpsd|debd1e7b43b0e2b8b8d4457a1af5fe74569fd224
 bin/gps.cer:vendor/bin/gps.cer
 lib/hw/gps.default.so:vendor/lib/hw/gps.universal5433.so
 lib/hw/flp.default.so:vendor/lib/hw/flp.default.so
