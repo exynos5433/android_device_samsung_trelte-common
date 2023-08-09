@@ -20,7 +20,8 @@ etc/wifi/olsrd.conf:vendor/etc/wifi/olsrd.conf
 
 # Bluetooth firmware
 vendor/firmware/bcm4358A0_V0033.0000.hcd
-vendor/firmware/bcm4358A1_V0054.0094.hcd
+vendor/firmware/bcm4358A1_V0054.0094.hcd:vendor/firmware/bcm4358A1_V0054.0094.hcd
+vendor/firmware/BCM4358A1_V0054.0094_wisol.hcd
 
 # aptX - from marlin - OPM1.171019.011
 lib/libaptX_encoder.so:vendor/lib/libaptX_encoder.so|984739a0bc968e18f75ced205733fe3f51c2d4f0
