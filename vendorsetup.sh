@@ -26,6 +26,10 @@ else
 	exit 0;
 fi
 
+# Default
+BUILD_SPOOFING="1"
+BUILD_SNET="1"
+
 echo " "
 echo "Patches: Applying NetworkStack: TcpSocketTracker: Opt-out for TCP info parsing on legacy kernels"
 patch -d packages/modules/NetworkStack -p1 -N --no-backup-if-mismatch --reject-file=/tmp/rej < device/samsung/$DEVICE/patches/packages/modules/NetworkStack/0001-TcpSocketTracker-Opt-out-for-TCP-info-parsing-on-leg.patch
@@ -43,6 +47,15 @@ if [ $BUILD_SPOOFING = "1" ]; then
 else
 	echo "Patches: Skipping frameworks: base: Add support for app signature spoofing"
 	echo "Patches: To compile with Spoofing patch type export BUILD_SPOOFING=1 and re-run envsetup"
+    echo " "
+fi
+if [ $BUILD_SNET = "1" ]; then
+	echo "Patches: Applying SafetyNet AttestationHooks patch"
+	patch -d frameworks/base -p1 -N --no-backup-if-mismatch --reject-file=/tmp/rej < device/samsung/$DEVICE/patches/frameworks/base/0002-Add-Attestation-Hooks.patch
+    echo " "
+else
+	echo "Patches: Skipping AttestationHooks"
+	echo "Patches: To compile with AttestationHooks type export BUILD_SNET=1 and re-run envsetup"
     echo " "
 fi
 
