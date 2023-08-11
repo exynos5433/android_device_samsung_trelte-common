@@ -173,48 +173,49 @@ void vendor_load_properties() {
     }
 
     /* name , device , build */
-    /* samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DSA2:user/release-keys */
-    /* treltexx-user 6.0.1 MMB29K N910CXXU2DSA2 release-keys*/
+	/* samsung/treltexx/trelte:6.0.1/MMB29K/N910CXXU2DVG1:user/release-keys */
+	/* ro.build.description=treltexx-user 6.0.1 MMB29K N910CXXU2DVG1 release-keys */
+
     
     if (bootloader.find("N910C") == 0) {
-        set_build_fingerprint("treltexx", "trelte", "N910CXXU2DSA2");
+        set_build_fingerprint("treltexx", "trelte", "N910CXXU2DVG1");
         model = "N910C";
     } else if (bootloader.find("N910H") == 0) {
-        set_build_fingerprint("tre3gxx", "tre3g", "N910HXXS2DSB2");
+        set_build_fingerprint("tre3gxx", "tre3g", "N910HXXU2DVG2");
         model = "N910H";
     } else if (bootloader.find("N910U") == 0) {
-        set_build_fingerprint("trhpltexx", "trhplte", "N910UXXU2DSA1");
+        set_build_fingerprint("trhpltexx", "trhplte", "N910UXXU2DVG1");
         model = "N910U";
     } else if (bootloader.find("N910S") == 0) {
-        set_build_fingerprint("trelteskt", "trelteskt", "N910SKSU2DSA1");
+        set_build_fingerprint("trelteskt", "trelteskt", "N910SKSU2DVG1");
         model = "N910S";
     } else if (bootloader.find("N910L") == 0) {
-        set_build_fingerprint("treltelgt", "treltelgt", "N910LKLU2DSA1");
+        set_build_fingerprint("treltelgt", "treltelgt", "N910LKLU2DVG1");
         model = "N910L";
     } else if (bootloader.find("N910K") == 0) {
-        set_build_fingerprint("treltektt", "treltektt", "N910KKTU2DSA1");
+        set_build_fingerprint("treltektt", "treltektt", "N910KKTU2DVG1");
         model = "N910K";
     } else if (bootloader.find("N915S") == 0) {
-        set_build_fingerprint("tbelteskt", "tbelteskt", "N915SKSU2DSA1");
+        set_build_fingerprint("tbelteskt", "tbelteskt", "N915SKSU2DVG1");
         model = "N915S";
     } else if (bootloader.find("N915L") == 0) {
-        set_build_fingerprint("tbeltelgt", "tbeltelgt", "N915LKLU2DSA1");
+        set_build_fingerprint("tbeltelgt", "tbeltelgt", "N915LKLU2DVG1");
         model = "N915L";
     } else if (bootloader.find("N915K") == 0) {
-        set_build_fingerprint("tbeltektt", "tbeltektt", "N915KKTU2DSA1");
+        set_build_fingerprint("tbeltektt", "tbeltektt", "N915KKTU2DVG1");
         model = "N915K";
     } else if (bootloader.find("N916S") == 0) {
-        set_build_fingerprint("tre3calteskt", "tre3calteskt", "N916SKSU2DSA1");
+        set_build_fingerprint("tre3calteskt", "tre3calteskt", "N916SKSU2DVG1");
         model = "N916S";
     } else if (bootloader.find("N916L") == 0) {
-        set_build_fingerprint("tre3caltelgt", "tre3caltelgt", "N916LKLU2DSA1");
+        set_build_fingerprint("tre3caltelgt", "tre3caltelgt", "N916LKLU2DVG1");
         model = "N916L";
     } else if (bootloader.find("N916K") == 0) {
-        set_build_fingerprint("tre3caltektt", "tre3caltektt", "N916KKTU2DSA1");
+        set_build_fingerprint("tre3caltektt", "tre3caltektt", "N916KKTU2DVG1");
         model = "N916K";
     } else {
         LOG(ERROR) << __func__ << ": Coudn't indentify model! Setting Default Model";
-        set_build_fingerprint("treltexx", "trelte", "N910CXXU2DSA2");
+        set_build_fingerprint("treltexx", "trelte", "N910CXXU2DVG1");
         lte_properties();
         model = "N910C";
     }
