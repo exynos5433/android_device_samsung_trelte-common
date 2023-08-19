@@ -399,18 +399,6 @@
          closed.  The default is 0. -->
     <integer name="config_lidNavigationAccessibility">1</integer>
 
-    <!-- Flag specifying whether VoLTE is available on device -->
-    <bool name="config_device_volte_available">true</bool>
-
-    <!-- Flag specifying whether VoLTE should be available for carrier: independent of
-         carrier provisioning. If false: hard disabled. If true: then depends on carrier
-         provisioning, availability etc -->
-    <bool name="config_carrier_volte_available">true</bool>
-
-    <!-- Flag specifying whether VoLTE availability is based on provisioning -->
-	<!-- TODO: Uncomment this if Lineage has re-added support -->
-    <!-- <bool name="config_carrier_volte_provisioned">true</bool> -->
-
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
